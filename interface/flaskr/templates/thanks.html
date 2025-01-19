@@ -1,0 +1,15 @@
+{% extends 'bootstrap_base.html' %}
+
+{% block header %}
+    <div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    <h1 class="card-title text-center">Thanks a lot for your participation!</h1>
+    <h3 class="card-text text-justify">You come to this page only because: {{ reason_str | safe}}.</h3>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<!-- We may use js to listen here to check whether every question is answered. -->
+
+{% endblock %}

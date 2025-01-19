@@ -1,0 +1,13 @@
+pip install Flask
+pip install Bootstrap-Flask
+pip install SQLAlchemy
+pip install SQLAlchemy-Utils
+pip install psycopg2-binary
+pip install Flask-WTF
+pip install WTForms
+pip install pandas
+pip install fastapi
+pip install "uvicorn[standard]"
+pip install langchain
+pip install openai
+pip install langchain-openai

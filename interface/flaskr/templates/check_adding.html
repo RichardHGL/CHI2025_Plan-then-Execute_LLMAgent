@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .task-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .task-item {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .task-item input[type="text"] {
+            flex: 1;
+            margin-right: 5px;
+        }
+
+        .task-item button {
+            margin-right: 5px;
+        }
+
+        .add-btn {
+            margin-top: 10px;
+        }
+
+        /* Indentation based on data-level */
+        .task-item[data-level="2"] {
+            padding-left: 20px;
+        }
+
+        .task-item[data-level="3"] {
+            padding-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Task List</h1>
+    <ul id="taskList" class="task-list">
+        <li class="task-item" data-level="1">
+            <input type="text" value="Task 1">
+            <button class="insert-btn">Insert</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </li>
+        <li class="task-item" data-level="2">
+            <input type="text" value="Task 1.2">
+            <button class="insert-btn">Insert</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </li>
+        <li class="task-item" data-level="3">
+            <input type="text" value="Task 1.2.1">
+            <button class="insert-btn">Insert</button>
+            <button class="edit-btn">Edit</button>
+            <button class="delete-btn">Delete</button>
+        </li>
+    </ul>
+
+    <button id="addBtn" class="add-btn">Add Task</button>
+
+    <script>
+        function createTaskItem(level, value) {
+            const li = document.createElement('li');
+            li.className = 'task-item';
+            li.setAttribute('data-level', level);
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = value;
+            input.disabled = true;
+
+            const insertBtn = document.createElement('button');
+            insertBtn.textContent = 'Insert';
+            insertBtn.className = 'insert-btn';
+            insertBtn.addEventListener('click', insertTask);
+
+            const editBtn = document.createElement('button');
+            editBtn.textContent = 'Edit';
+            editBtn.className = 'edit-btn';
+            editBtn.addEventListener('click', editTask);
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.className = 'delete-btn';
+            deleteBtn.addEventListener('click', deleteTask);
+
+            li.appendChild(input);
+            li.appendChild(insertBtn);
+            li.appendChild(editBtn);
+            li.appendChild(deleteBtn);
+
+            return li;
+        }
+
+        function insertTask() {
+            const taskItem = this.closest('.task-item');
+            const level = parseInt(taskItem.getAttribute('data-level'));
+            const newTask = prompt('Enter the new task:');
+            if (newTask) {
+                const newTaskItem = createTaskItem(level, newTask);
+                taskItem.parentNode.insertBefore(newTaskItem, taskItem.nextSibling);
+            }
+        }
+
+        function editTask() {
+            const taskItem = this.closest('.task-item');
+            const input = taskItem.querySelector('input[type="text"]');
+            input.disabled = false;
+            input.focus();
+            input.addEventListener('blur', function () {
+                this.disabled = true;
+            });
+        }
+
+        function deleteTask() {
+            const taskItem = this.closest('.task-item');
+            taskItem.parentNode.removeChild(taskItem);
+        }
+
+        document.getElementById('addBtn').addEventListener('click', function () {
+            const newTask = prompt('Enter the new task:');
+            if (newTask) {
+                const taskList = document.getElementById('taskList');
+                const newTaskItem = createTaskItem(1, newTask);
+                taskList.appendChild(newTaskItem);
+            }
+        });
+    </script>
+</body>
+
+</html>

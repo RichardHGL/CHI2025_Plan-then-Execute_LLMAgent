@@ -1,0 +1,118 @@
+
+body, html {
+    height: 60%;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto; /* Adds margin to the top and bottom */
+    display: flex;
+    flex-direction: column;
+    height: calc(80vh - 50px); /* Adjusted to account for the added margin */
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.chat-area {
+    padding: 10px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.input-container {
+    display: flex;
+    padding: 10px;
+}
+.input-container input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.input-container input:disabled{
+    border:1px solid #DDD;
+    background-color:#F5F5F5;
+    color:#ACA899;
+}
+.input-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+.input-container button:hover {
+    background-color: #0056b3;
+}
+.message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 100%; /* Adjusted width here */
+}
+.user-message {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+.bot-message {
+    background-color: #cfcff5;
+    align-self: flex-start;
+}
+.action-message {
+    background-color: #cfcff5;
+    align-self: flex-start;
+}
+/* #eef7b3 */
+/* #cfcff5; */
+
+.jumping-dots span {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    animation: jump 1s infinite;
+    display: inline-block;
+}
+  
+.jumping-dots .dot-1 {
+background-color: #49cefe;
+width: 12px;
+height: 12px;
+border-radius: 50%;
+margin-right: 3px;
+animation-delay: 200ms;
+}
+  
+.jumping-dots .dot-2 {
+    background-color: #49cefe;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 3px;
+    animation-delay: 400ms;
+}
+  
+.jumping-dots .dot-3 {
+    background-color: #49cefe;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 3px;
+    animation-delay: 600ms;
+}
+  
+@keyframes jump {
+    0% {
+      bottom: 0px;
+    }
+    20% {
+      bottom: 5px;
+    }
+    40% {
+      bottom: 0px;
+    }
+}

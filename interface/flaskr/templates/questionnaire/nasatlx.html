@@ -1,0 +1,70 @@
+{% extends 'bootstrap4_base.html' %}
+{% from 'bootstrap4/form.html' import render_field %}
+
+{% block header %}
+    <div class="card text-white bg-primary mb-3">
+      <div class="card-body">
+        <h1 class="card-title text-center">Questionnaire</h1>
+        <h3 class="card-text text-justify">Please let us know how much cognitive load you have in making decisions in this task.</h3>
+      </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="post"
+            class="form" role="form">
+  {{form.hidden_tag()}}
+  {{ render_field(form.mental_demand)}}
+  <div class="row">
+    <div class="col-6 col-md-4 text-start">Very Low</div>
+    <div class="col-6 col-md-4 text-center" id="mental_demand_value">0</div>
+    <div class="col-6 col-md-4 text-end">Very High</div>
+  </div>
+  <br>
+  {{ render_field(form.physical_demand)}}
+  <div class="row">
+    <div class="col-6 col-md-4 text-start">Very Low</div>
+    <div class="col-6 col-md-4 text-center" id="physical_demand_value">0</div>
+    <div class="col-6 col-md-4 text-end">Very High</div>
+  </div>
+  <br>
+  {{ render_field(form.temporal_demand)}}
+  <div class="row">
+    <div class="col-6 col-md-4 text-start">Very Low</div>
+    <div class="col-6 col-md-4 text-center" id="temporal_demand_value">0</div>
+    <div class="col-6 col-md-4 text-end">Very High</div>
+  </div>
+  <br>
+  {{ render_field(form.performance)}}
+  <div class="row">
+    <div class="col-6 col-md-4 text-start">Perfect</div>
+    <div class="col-6 col-md-4 text-center" id="performance_value">0</div>
+    <div class="col-6 col-md-4 text-end">Failure</div>
+  </div>
+  <br>
+  {{ render_field(form.effort)}}
+  <div class="row">
+    <div class="col-6 col-md-4 text-start">Very Low</div>
+    <div class="col-6 col-md-4 text-center" id="effort_value">0</div>
+    <div class="col-6 col-md-4 text-end">Very High</div>
+  </div>
+  <br>
+  {{ render_field(form.frustration)}}
+  <div class="row">
+    <div class="col-6 col-md-4 text-start">Very Low</div>
+    <div class="col-6 col-md-4 text-center" id="frustration_value">0</div>
+    <div class="col-6 col-md-4 text-end">Very High</div>
+  </div>
+  <br>
+  <div class="d-grid"><input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Submit"></div>
+</form>
+{% endblock %}
+
+{% block extra_scripts %}
+<script  type="text/javascript">
+  function updateTextInput(id, val) {
+    document.getElementById(id).innerHTML=val; 
+  }
+</script>
+{% endblock %}

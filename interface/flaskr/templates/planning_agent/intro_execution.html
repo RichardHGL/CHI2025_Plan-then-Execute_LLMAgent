@@ -1,0 +1,137 @@
+{% extends 'bootstrap_base.html' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block header %}
+<div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    <h1 class="card-title text-center">Stage II: Execution</h1>
+    <h3 class="card-text text-justify">In the execution stage, the plan will be used to instruct large language models to choose actions to execute. In each step, you will see the assistant predicted action. After finishing the whole plan, you can continue to next task.</h3>
+  </div>
+</div>
+
+<style>
+
+    .bd-example {
+        padding: 0.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 0.5px;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        background-color: bisque; /* set the background color to red */
+    }
+
+    .task-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .task-item {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .task-item input[type="text"] {
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    .task-item button {
+        margin-right: 5px;
+    }
+
+    .add-btn {
+        margin-top: 10px;
+    }
+
+    /* Indentation based on data-level */
+    .task-item[data-level="2"] {
+        padding-left: 20px;
+    }
+
+    .task-item[data-level="3"] {
+        padding-left: 40px;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<p>After you click button 'start'. The execution process will be presented in a conversation. We provide one screenshot of our conversational interface below to show you the options:</p>
+<h3><span class="badge rounded-pill bg-info">Response to Action Prediction</span></h3>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+    The plan will be executed <code>step-by-step</code> with transforming each primary step into one action. After one action is predicted, you can choose from the three options:
+    <!-- However, the LLM assistants may also make errors. We provide options to fix such potential problems: -->
+    <ul>
+        <li> <code><strong>Proceed</strong></code>: When you think the predicted action from LLM assistant is correct, you can click button <code>'Proceed'</code> to allow the LLM assistant to directly execute current action. </li>
+        <li> <code><strong>Feedback</strong></code>: After the LLM Assistant predict action for one step, you can give feedback with text input. Based on your text input, LLM Assistant will predict action again or fix some parameters (e.g., password). After generating new predicted action, you will be asked to choose one of the three options again.</li>
+        <li><code><strong>Specify Action</strong></code>: Instead of predicting action with LLM Assistant, you can manually specify one action and all parameters for action. With your manual input, LLM Assistant will execute the action you specify.</li>
+    </ul>
+    <!-- After one action is executed, you can choose:
+      <ul>
+        <li> <code><strong>Next Step</strong></code>: When you think the action is correct and execution results should be correct, you can move forward to next step.</li>
+        <li> <code><strong>Re-execute this step</strong></code>: If you think the execution can be wrong (e.g., wrong action selection or wrong action parameters), you can give text feedback with text input and re-execute it.</li>
+      </ul>
+      After all steps are executed, the submit button will be displayed, and then you can move to next task. -->
+    </p>
+  </div>
+</div>
+<br>
+<div align="center">
+    <img src="{{url_for('static', filename='images/Screenshot-execution-options.png')}}"  class="figure-img img-fluid rounded" alt="Responsive image">
+</div>
+
+<h3><span class="badge rounded-pill bg-warning">How to address potential errors</span></h3>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+        However, the LLM assistants may also make errors. The potential cases for action prediction are:
+      <ul>
+        <li> <code><strong>Correct Action Prediction</strong></code>: When you think the predicted action from LLM assistant is correct, you can click button <code>'Proceed'</code> to allow the LLM assistant to directly execute current action. </li>
+        <li> <code><strong>Wrong Action Selection</strong></code>: The LLM Assistant select one action that does not align with current plan primary step. You should use <code>'Feedback'</code> or <code>'Specify Action'</code> to fix that problem.</li>
+        <li> <code><strong>Wrong Action Parameters</strong></code>. When you find that the LLM Assistant selects the correct action but wrong parameters, you should use <code>'Feedback'</code> or <code>'Specify Action'</code> to fix that problem.</li>
+        <li> <code>Special case</code>: When there is a warning message that 'LLM Assistant fail to predict one action'. You should use <code>'Feedback'</code> or <code>'Specify Action'</code> until one action is provided to execute.</li>
+      </ul>
+    </p>
+  </div>
+</div>
+<br>
+
+<p>The action specification includes two-stages: (1) select one action (2) fill in action parameters. Their screenshots are shown below:</p>
+<div align="center">
+    <img src="{{url_for('static', filename='images/Screenshot-action-specification-1.png')}}"  class="figure-img img-fluid rounded" alt="Responsive image">
+    <img src="{{url_for('static', filename='images/Screenshot-action-specification-2.png')}}"  class="figure-img img-fluid rounded" alt="Responsive image">
+</div>
+
+<h3><span class="badge rounded-pill bg-primary">After Execution of one Step</span></h3>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+        After one action is executed, you can choose:
+      <ul>
+        <li> <code><strong>Next Step</strong></code>: When you think the action is correct and execution results should be correct, you can move forward to next step.</li>
+        <li> <code><strong>Re-execute this step</strong></code>: If you think the execution can be wrong (e.g., wrong action selection or wrong action parameters), you can give text feedback with text input and re-execute it.</li>
+      </ul>
+      After all steps are executed, the submit button will be displayed, and then you can move to next task.
+    </p>
+  </div>
+</div>
+<br>
+
+<div align="center">
+    <img src="{{url_for('static', filename='images/Screenshot-after-execution.png')}}"  class="figure-img img-fluid rounded" alt="Responsive image">
+</div>
+
+<form action="" method="post" class="form" role="form">
+    <div class="d-grid">
+      <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Got it, let us move to the example.">
+    </div>
+</form>
+
+{% endblock %}
+

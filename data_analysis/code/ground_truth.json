@@ -1,0 +1,307 @@
+[
+    {
+        "task_id": "test-113",
+        "ground_truth": [
+            {
+                "tool_name": "bank_account_login",
+                "tool_input": {
+                    "account": "12345678",
+                    "passwd": "Password123"
+                }
+            },
+            {
+                "tool_name": "check_balance",
+                "tool_input": {
+                    "account": "12345678",
+                    "passwd": "Password123"
+                }
+            },
+            {
+                "tool_name": "bank_account_login",
+                "tool_input": {
+                    "account": "87654321",
+                    "passwd": "123Password"
+                }
+            },
+            {
+                "tool_name": "check_balance",
+                "tool_input": {
+                    "account": "87654321",
+                    "passwd": "123Password"
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-149",
+        "ground_truth": [
+            {
+                "tool_name": "bank_account_login",
+                "tool_input": {
+                    "account": "54321",
+                    "passwd": "PWD2023"
+                }
+            },
+            {
+                "tool_name": "buy_currency",
+                "tool_input": {
+                    "account": "54321",
+                    "amount": 10000,
+                    "passwd": "PWD2023",
+                    "sourceCurrency": "USD",
+                    "targetCurrency": "EUR"
+                }
+            },
+            {
+                "tool_name": "sell_currency",
+                "tool_input": {
+                    "account": "54321",
+                    "amount": 5000,
+                    "passwd": "PWD2023",
+                    "sourceCurrency": "USD",
+                    "targetCurrency": "EUR"
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-184",
+        "ground_truth": [
+            {
+                "tool_name": "check_deposite_product",
+                "tool_input": {
+                    "product_name": "Happy Savings High Gold"
+                }
+            },
+            {
+                "tool_name": "loan_application",
+                "tool_input": {
+                    "account": "123456",
+                    "passwd": "789123",
+                    "verification": "8888"
+                }
+            },
+            {
+                "tool_name": "check_loan_status",
+                "tool_input": {
+                    "account": "123456",
+                    "passwd": "789123",
+                    "verification": "8888"
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-200",
+        "ground_truth": [
+            {
+                "tool_name": "search_card",
+                "tool_input": {
+                    "mode": "endswith",
+                    "pattern": "12345"
+                }
+            },
+            {
+                "tool_name": "pay_credit_card",
+                "tool_input": {
+                    "amount": 12000,
+                    "source_card": "6212345678900011",
+                    "target_card": "4980981092312345"
+                }
+            },
+            {
+                "tool_name": "check_credit_card_bills",
+                "tool_input": {
+                    "card": "4980981092312345",
+                    "period": 30
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-256",
+        "ground_truth": [
+            {
+                "tool_name": "check_order_status",
+                "tool_input": {
+                    "tracking_number": "123456789"
+                }
+            },
+            {
+                "tool_name": "check_order_status",
+                "tool_input": {
+                    "tracking_number": "987654321"
+                }
+            },
+            {
+                "tool_name": "check_order_customer",
+                "tool_input": {
+                    "customer_id": "A123456",
+                    "tracking_number": "123456789"
+                }
+            },
+            {
+                "tool_name": "check_order_customer",
+                "tool_input": {
+                    "customer_id": "A123456",
+                    "tracking_number": "987654321"
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-271",
+        "ground_truth": [
+            {
+                "tool_name": "add_single_dish_to_order",
+                "tool_input": {
+                    "amount": 1,
+                    "dish_name": "Spicy Hot Pot",
+                    "table_id": 10
+                }
+            },
+            {
+                "tool_name": "add_multiple_dish_to_order",
+                "tool_input": {
+                    "spicy_hot_pot": 0,
+                    "beef": 2,
+                    "hand_torn_cabbage": 1,
+                    "rice": 0,
+                    "table_id": 10
+                }
+            },
+            {
+                "tool_name": "place_order",
+                "tool_input": {
+                    "table_id": 10
+                }
+            },
+            {
+                "tool_name": "check_out",
+                "tool_input": {
+                    "table_id": 10
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-388",
+        "ground_truth": [
+            {
+                "tool_name": "create_alarm",
+                "tool_input": {
+                    "frequency": "Weekday",
+                    "hour": 7,
+                    "minute": 30,
+                    "repeat": "Weekly"
+                }
+            },
+            {
+                "tool_name": "cancel_alarm",
+                "tool_input": {
+                    "frequency": "Thursday",
+                    "hour": 7,
+                    "minute": 30,
+                    "repeat": "Weekly"
+                }
+            },
+            {
+                "tool_name": "create_alarm",
+                "tool_input": {
+                    "frequency": "Thursday",
+                    "hour": 20,
+                    "minute": 0,
+                    "repeat": "Weekly"
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-497",
+        "ground_truth": [
+            {
+                "tool_name": "search_flight",
+                "tool_input": {
+                    "arrival_city": "Amsterdam",
+                    "date": "Tomorrow",
+                    "departure_city": "London",
+                    "timePeriod": "Morning"
+                }
+            },
+            {
+                "tool_name": "book_flight",
+                "tool_input": {
+                    "flight_id": [
+                        "KL23313",
+                        "JL98642"
+                    ]
+                }
+            },
+            {
+                "tool_name": "search_flight",
+                "tool_input": {
+                    "arrival_city": "London",
+                    "date": "Tomorrow",
+                    "departure_city": "Amsterdam",
+                    "timePeriod": "Evening"
+                }
+            },
+            {
+                "tool_name": "book_flight",
+                "tool_input": {
+                    "flight_id": "TB0213"
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-675",
+        "ground_truth": [
+            {
+                "tool_name": "travel_itinerary_planner",
+                "tool_input": {
+                    "departure_time": "October 1st 8:00 AM",
+                    "destination": "Japan",
+                    "return_time": "October 7th 11:00 PM"
+                }
+            },
+            {
+                "tool_name": "select_itinerary",
+                "tool_input": {
+                    "selection": "route-2"
+                }
+            },
+            {
+                "tool_name": "hotel_suggestion",
+                "tool_input": {
+                    "selection": "route-2"
+                }
+            }
+        ]
+    },
+    {
+        "task_id": "test-859",
+        "ground_truth": [
+            {
+                "tool_name": "obtain_user_info",
+                "tool_input": {}
+            },
+            {
+                "tool_name": "search_service_provider",
+                "tool_input": {
+                    "brand": "Sony"
+                }
+            },
+            {
+                "tool_name": "appliance_repair_request",
+                "tool_input": {
+                    "applianceModel": "X800H",
+                    "applianceType": "TV",
+                    "appointment_time": ["Tomorrow 18:00:00","Tomorrow 6 PM"],
+                    "issueDescription": "Screen issue",
+                    "servicepointID": ["Sony01","Sony03"]
+                }
+            }
+        ]
+    }
+]

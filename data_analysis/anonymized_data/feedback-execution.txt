@@ -1,0 +1,268 @@
+AP-AE
+--------------------------------
+
+no comments to give
+it is detailed and goes through stages to be the most accurate while also being able to do the task that has been asked of it
+It was all clear now
+It was good.
+I found the execution stage functioned well and implemented the plan as instructed allowing me to review all of the execution stage.
+I think it executed the plan well
+The execution worked as expected 
+nan
+Ive used booking systems like this in the past and they seem very reliable they often work well with a human back up at the end of the line.
+I have nothing to add here
+The execution stage occasionally made some mistakes. I believe the system will improve with time.
+the execution part interest me most because it does everything step by step till the final stage.
+I was a little confused about why we would pay $12K on the credit card when only $10K was owed. I was also puzzled about why, in the Execution stage of the Japan-planning tasks, it appeared to repeat Step 2 once or twice. 
+It did make a couple of errors. ie. choosing the wrong plan for the tokyo trip and not carrying out the 2nd transaction in the currency task. It should probably add some extra checks/confirmations to stop this happenning.
+Step by step execution
+execution if pretty smooth too apart from some difficult occasional coding which can be hard to decipher/make sense of
+The execution was clearly excuted following the plan. And gave the user options
+detailed and in order
+it gave the correct feedback 
+the execution stage was smooth
+the LLM Assistant worked as i expected except for some minor exceptions
+nan
+It was seamless
+♡ this was very good as it was made in simple terms and especially for the booking tasks as this provided clear clarification to the customer ♡
+when things did not go as i expected from the previous page information it was clear where i had made the mistake
+no comment
+I dont have comments
+This also seems very hands on, defeating the purpose.
+nan
+None
+nan
+GOOD
+i like how fast and accurate the execution state is
+The LLM Assistant performed so well and accurately
+it combines some parts from the planning stage, but this could be one of the reasons why it misses some executions
+The steps were executed step by step well
+It was straightforward
+nil
+I Just really liked how quick it was to respond and execute demands 
+Seemed to work well but unsure if I'd trust it.
+not applicable
+The execution stage does not always the planning and then results in the task not executing perfectly.
+The LLM was able to provide all the information requested and executed well.
+no comment
+nan
+It wasn't totally clear when something had failed if the system had corrected itself. and I got into an instruction loop a few times 
+Practical, risky and interesting at the same time.
+N/a
+execution aligned with plan
+Same with the execution, in practice it made more sense
+As above, the execution did not allow me to interact with the Assistant to see how it would react to different input. 
+execution stage was too as were the errors 
+Planning and monitoring continue to provide information about the task. 
+The execution is perfect 
+The execution stage went smoothly, except for a few rare instances of an error response before also saying the AI's automatic reply (which was correct). 
+An AI assistant should be streamline and easy to use.  All that reading of the tasks and checking, a person might as well do the task themselves if they have to approve every step.  
+A slight error in one of the tasks where it didn't sell the USD as asked
+It usually worked quite well.
+the execution stage is where i had issue with, the system choose the route that have incomplete location of where the traveller wants when there is exactly the right route there.
+No problems, easy to understand.
+The execution made sense as well and was easy to follow
+The execution stage was also somewhat accurate but sometimes it didn't work as intended.
+None, it all worked very well.
+--------------------------------
+
+AP-UE
+--------------------------------
+
+nan
+Execution seemed a bit clunky when feedback was provided. Maybe this is due to the nature of the study and there's some sandboxing happening? 
+Things became more clear as I went along.
+step by step execution is best
+He didn't do some tasks but overall he does the job
+No comments
+I enjoyed seeing the assistant execute its tasks, except when it got a little wrong or confusing. 
+No comment
+It was easy to read the execution stages and it was short and concise.
+Everything was written down correctly and I was able to check over information to make sure what was being done was correct.
+This stage was difficult to understand what needed to be changed if there was an action error. Sometimes had to guess what was wrong.
+The assistant tends to execute tasks accurately, following the planned steps closely. This adherence to the plan helps in achieving the desired outcomes as specified during the planning stage.
+n.a
+The execution stage worked well. It provided a good plan for execution. 
+as above - i thought it was well though out
+Same as the tutorial answer
+followed plan diligently 
+It pointed out valid confusions on what to execute next and ask for essential steps to follow next ensuring it does its work diligently.
+It also worked well I Thought
+the execution only needs slight improvement
+No comments
+I very much appreciate the degree of interactivity and information available.
+worked good
+nan
+User interactivity was good! Helped to understand how the system worked fluently and easily.
+Execution was enjoyable and being able to reference back made the task more enjoyable
+This was by far the hardest study I've done and I use chat ggpt and some complex prompts. Obviously this is a different type of LLM. End of the day I definitely enjoyed the study
+I think that works well, is clear
+nice one
+very easy as well
+Fantastic
+help to execute easily
+Confusing at times but made more sense than the tutorial
+No comments
+It got a bit annoying at times but idk if that was because it was my fault 
+That part seemed to work well, although had to refresh the page once
+It is too small within the box frame. It could have a better layout.
+I found it clunky and nit that user friendly
+It was simple enough to understand.
+No additional comments
+Engage in meaningful conversations: I try to make our interactions enjoyable and informative, asking follow-up questions and offering insights to keep the conversation flowing.
+Very cool ideas, the execution stage was neat because you could see how it was all actually working out
+None.
+LLM assistant effectively outlined many major steps. However, it could be improved by providing more specific examples.
+i think the whole system needs to be redone. the formatting is confusing
+no comments or remarks sorry
+When I tried to refresh the page it didnt always refresh all of the information to fully start over
+goood
+I felt accomplished with the  execution.
+I would still rather do things myself
+The execution was highly reliable
+nan
+Overall the execution of the plans were mostly accurate with a few mistakes that needed to be corrected.
+The execution phase helps to understand the steps the AI has taken and its stages with outcome what is expected out the execution till final output. 
+The executions were usually highly accurate with no feedback needed
+Execution stage is in every task takes into consideration of the assistant capabilities to execute required plan systematically. 
+its as good as it can be I find. 
+I like being able to specify what I want to do because sometimes the ai did not do what it's supposed to.
+No comment
+The execution stage was amazing. I feel like this could be the future and we wont need to call or talk to people to get this kind of thing done ever again.
+there is always improvement in the use of colors
+The system executed well, but I had to read thoroughly as to understand it properly
+none
+the executuion stage was easy to use and very thorough
+--------------------------------
+
+UP-AE
+--------------------------------
+
+Good
+It works well showing both the 'code' and the results in a logical way
+nan
+It was confusing 
+It was smooth and did very well in producing the anticipated results.
+coding made easy
+Developers should ensure the efficiency and reliability of the LLM assistant
+The Assistant didnt always do things in order of what you wrote, it should be step 1.1 then 1.2 for example but especially on the last task the assistant grouped up all of the steps and executed just one of them.
+nan
+Execution Stage: Steps were actionable and practical. Consistent format ensured ease of following tasks.
+This stage was ok and not too difficult.
+I think the assistant did well in using the information from the planning stage to carry out what was asked
+nice and straightforward
+For elder people or people who don't have much experience with technology it may be need a speaker for them to tell the system what to do other wise it's much reliable and quality way of doing your things 
+The execution stage is effective, but it would be helpful to allow real-time adjustments if issues arise.
+very accomplishing once planning is done
+Generally pretty clear in its feedback
+I liked the way the assistant work it made work very easy
+The execution stage worked well and I could then see how the steps worked.
+The execution seemed to work well throughout
+execution is fine but i think someone should be able to interrupt the system especially when handling financial tasks
+it felt like editing the plan felt unnecessary as the AI always had done it correctly 
+It was great.
+Loved it.
+nan
+WELL ORGANIZED AND CLEAR TO UNDERATND AND EXECUTION 
+It would be great if you had an option to go back and fix errors after seeing it run.
+After the study, it was interesting to see how it worked!
+no comment
+It's easier than I thought.
+As above
+.
+It seems to work well and follow the process correctly
+nan
+It works i guess?
+nan
+This bit is user friendly, but very robotic, which makes it difficult to trust
+The execution looked like the AI knew how to handle the situation on it's own and was thorough
+It gives clarity
+The system was very good at interpreting needs even when plan was incorrect or unclear
+None
+it was very easy as compared to the planning
+It seemed a bit sluggish, though I get that was mostly so people would read through the text and not just skip it.
+It was pretty cool seeing the instructions appear to a user. However sometimes it seemed less realistic. 
+None
+nan
+Straightforward
+As above 
+Liked it a lot, easy to understand. 
+No issues with the execution stage.
+The execution stage’s focus on verification and confirmation is valuable. Ensuring all necessary actions are listed and clear helps in avoiding errors and ensuring successful completion.
+Execution worked fairly well.
+The steps needs to be highlighted of completion while showing the prompt for the developers to test to test their flow is being executed rather than looking at language prompt. if there's an error from developer end of the execution it should be highlighted on the flow.
+It was very clear.
+program ran smoothly
+Little error which I believe can be worked on
+I think it was good and clearly showed if you / the AI were doing the right thing.
+No comments
+It was easy
+ na
+its cool
+--------------------------------
+
+UP-UE
+--------------------------------
+
+On changing some of the text in the planning stage the LLM assistant seemed to bypass this and use text that I had removed in its output.  Eg. I changed 'Evening' to 'Night', but it still used evening in its output.
+The execution was well done without any hiccups
+IT seemed to be an easy to follow process
+Everything went fine during the execution. A couple of instructions needed to be manually executed, but it was easy.
+nan
+It was surprisingly easier as time went on
+include more error handling or prompts for user confirmation
+The execution stage was a bit easier than the planning stage and it was much way easier to do
+the execution stage is where many of the problems appeared
+Easy to understand
+It was pretty intuitive and interesting to watch how the assistant reacted to the plan or instructions.
+This was easier to use but when it was clear I had made mistakes
+None
+nan
+none
+Again it seemed to do well as long as directions were set correctly.
+None
+I thought the execution stage was a little more straightforward and easier to understand when evaluating the tasks. 
+A bit unreliable as it can make mistakes
+No comments to make
+I found myself having to edit mistakes made during the planning stage.
+none
+None, thanks.
+Very simple and easy to work with.
+The AI seemed to "know what it was doing."
+seemed very efficient.
+I did have some issue's with the first case in the trip to Japan. It would plan routes, but only one would include Narwa Park (I believe this was the name) on the 4th as the instructions seem to have suggested were the desire. I was not able to successfully get it to alter the plan where every route included Narwa on the 4th. 
+i think it was a lot of fun and youre doing a great job, keep it up 
+It had issues receiving specific information (such as the banking task) without having a human manually telling it what to do and overriding certain commands. 
+It was entertaining. 
+nan
+I'd rather do it myself
+It was difficult to follow what was going on and how to provide feedback.
+Excellent 
+The planning took a lot of brain power to make sure if met the instructions.
+it executed according to plan
+nan
+It was a little unreliable but actually not too bad.
+It is reliable.
+The execution stage required less effort as the LLM assistant was mostly accurate in execution.
+For the execution stage, I commend it for creating an input formatting box to execute the user's request validating each requirement.
+nan
+nan
+The execution stage was horribly buggy which made it difficult to use, Due to this i was forced to rush the study in order to finish before being timed out.
+The LLM assistant was capable of executing the instructions as per the plan. If the plan is not written correctrly therefore the LLM assistant will output incorrect results
+nothing
+It reflected on the already giving instruction
+The assistant missed the mark on picking the best route for the Japan trip. It initially selected a route that did not include the requirements of the customer.
+This worked well but didn't always pick the key parts of the task to execute them when after clicking to proceed button it would then execute them correctly.
+It seemed to be working very well.
+everything is pretty explanatory, but I am one of those people that is not good at explaining things like this, not necessarily to say that it is hard because I did it, and I figured it out but necessarily the terms and the things that I should be saying because for me, everything worked great I understood completely what I was supposed to do. I didn’t get mixed up or confused except for maybe a few times, I experience no technical issues.
+No comments
+None
+nan
+i never knew how much work it took to do this 
+The execution stage was simple after rereading the directions
+There were some errors that occured and I didnt really understand why they had.
+There is little knowledge on how The LLM Assistant executes actions and why it may not complete the whole agenda, making it difficult to identify the error when it makes mistakes.
+the execution stage was honest and did alot of the work for me
+straightforward
+--------------------------------
+

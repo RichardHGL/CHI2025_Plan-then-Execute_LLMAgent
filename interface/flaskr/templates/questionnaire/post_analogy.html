@@ -1,0 +1,74 @@
+{% extends 'bootstrap_base.html' %}
+<!-- {% from "_formhelpers.html" import render_field %} -->
+{% from 'bootstrap/form.html' import render_field %}
+{% from 'bootstrap/form.html' import render_form %}
+<!-- {{ render_form(form, button_style='success') }} -->
+
+{% block header %}
+    <div class="card text-white bg-primary mb-3">
+      <div class="card-body">
+        <h1 class="card-title text-center">Questionnaire</h1>
+        <h3 class="card-text text-justify">Please let us know how you perceived the analogy: {{ analogy_str | safe }}</h3>
+      </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+{% macro _hz_form_wrap(horizontal_columns, form_type, add_group=False, required=False) %}
+    {% if form_type == "horizontal" %}
+        {% if add_group %}
+            <div class="form-group row{% if required %} required{% endif %}">{% endif %}
+        <div class="offset-{{ horizontal_columns[0] }}-{{ horizontal_columns[1] }}
+              col-{{ horizontal_columns[0] }}-{{ horizontal_columns[2] }}
+             ">
+    {% endif %}
+    {{ caller() }}
+{% endmacro %}
+
+
+{% macro render_radio_field(field,
+                    form_type="basic",
+                    horizontal_columns=('lg', 2, 10),
+                    button_map={},
+                    button_style='',
+                    button_size='') %}
+  {% if field.flags.required and not required in kwargs %}
+      {% set kwargs = dict(required=True, **kwargs) %}
+  {% endif %}
+
+  {% set extra_classes = ' ' + field.render_kw.class if field.render_kw.class else '' %}
+
+  <div class="form-group required">
+      {{ field.label(class="form-control-label")|safe }}<br>
+      {#% call _hz_form_wrap(horizontal_columns, form_type, True, required=required) %#}
+      {% for item in field -%}
+          <div class="form-check form-check-inline">
+              {{ item(class_="form-check-input")|safe }}
+              {{ item.label(class="form-check-label", for=item.id)|safe }}
+          </div>
+      {% endfor %}
+  {#% endcall %#}
+  {%- if field.errors %}
+      {%- for error in field.errors %}
+          <div class="invalid-feedback" style="display: block;">{{ error }}</div>
+      {%- endfor %}
+  {%- elif field.description -%}
+      <small class="form-text text-muted">{{ field.description|safe }}</small>
+  {%- endif %} 
+  </div>
+{% endmacro %}
+
+<form action="" method="post"
+            class="form" role="form">
+  {{form.hidden_tag()}}
+
+{{ render_radio_field(form.answer_1) }}
+{{ render_radio_field(form.answer_2) }}
+{{ render_field(form.answer_3) }}
+{{ render_field(form.answer_4) }}
+
+  <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Submit">
+</form>
+
+{% endblock %}

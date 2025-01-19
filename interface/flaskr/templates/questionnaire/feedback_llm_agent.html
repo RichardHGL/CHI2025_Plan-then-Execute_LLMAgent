@@ -1,0 +1,28 @@
+{% extends 'bootstrap_base.html' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block header %}
+    <div class="card text-white bg-primary mb-3">
+      <div class="card-body">
+        <h1 class="card-title text-center">Questionnaire</h1>
+        <h3 class="card-text text-justify">Please let us know how you perceived the LLM Assistant.</h3>
+      </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<form action="" method="post"
+            class="form" role="form">
+  {{form.hidden_tag()}}
+
+{{ render_field(form.planning_feedback) }}
+{{ render_field(form.execution_feedback) }}
+{{ render_field(form.other_feedback) }}
+
+<div class="d-grid">
+    <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Submit">
+</div>
+</form>
+
+{% endblock %}

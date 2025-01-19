@@ -1,0 +1,268 @@
+AP-AE
+--------------------------------
+
+It seems good.
+it is detailed and goes through stages to be the most accurate while also being able to do the task that has been asked of it
+It was all clear now
+It was good.
+The planning stage outlines all of the steps and associated data and information needed and overall is efficient to follow.
+I think it was quite easy to understand and would be easy to use
+The planning stage worked very  well
+nan
+This seemed like a reliable system, I only saw the complication with selecting the route for the desired visited locations in 1 task however i could foresee the mistake in the planning of the task.
+I have nothing else to say
+The planning stage seemed well constructed and logical.
+the LLM assistant planning method is one of the best that I have ever seen, it make sure that everything is well planned before execution.
+There were times when I felt like I might want to edit the plan, but it wasn't part of this study. 
+I thought it generally very good. It laid out simple well thought out plans that should be easy to execute. you could expand some of the information required to improve the system. ie. the amsterdam trip it only had info for morning departure and evening return. for the outward journey there were two time options but the system did not have the information as to which one would be better / preferential for the client. Asking for a little more information upfront would limit risks of making the wrong choice.
+Well planned
+planning was good it only failed on say one substep out of every 2-3 tasks out of the 6, I think one being one of the destinations with the flights that it wasn't able to recognize 
+The planning state was clear and well set out
+pretty detailed
+the LLM assistant is well planned and organised
+the planning stage was smooth
+the LLM Assistant worked as i expected
+nan
+It was comprehensive
+♡ i really like how organised it is, the step by step and numerical planning allows it to make sense in a clear and structured way, meaning there is less room for errors or misinformation ♡
+everything made sense when i read it but it did not always do what i thought it would when it came to excution
+makes it easier to use it and reliable
+I dont have comments
+it seems quite hands on which I dislike
+nan
+None
+The system was taking me step by step and I learned easily
+THAT CAN GIVE MORE OPTIONS
+this system is reliable and make schedules easier and faster
+It was really easy to understand what was expected to be done
+It's very detailed in its steps 
+In the primary stage the LLM provided steps that would be used to execute the task
+Perhaps it's an issue with my computer literacy, but I felt the steps should be geared slightly more to the human mind rather than the computer
+nil
+It was remarkable how quickly It was able to achieve the goals which was set out in the tasks. I quite liked it I would definitely want something like this in my life as It would my my life much easier  
+Seemed over complicated 
+I felt that there were certain feeback loops missing from the LLM assistant
+The planning stage is well thought out.
+The LLM Assistant was more than capable of planning.
+no comment
+nan
+Very clear
+User friendly and easy to understand.
+N/a
+the step by step approach is useful
+In planning it seemed more clear than I initially thought
+I found the options were pre planned and didn't give me a chance to have an input on a potentially different outcome. 
+planning stage was easy to understand
+The task of deciding what options to take is a good process.
+It is very easy to work with and it plans well. it is easy to understand and it is quite helpful
+It was logical to understand, but it took some time and effort to double check if the AI's planning was accurate.
+As I said previously, it's far, far too detailed in an unnecessary way.  I'm not sure people need the entire plan of what the AI will do, as long as the job gets done.  
+Mostly worked well, was able to recognize what was being asked
+It was useful to break down the steps.
+the planning stage was good, the system planned everything well
+No problems.
+I think the planning stage was easy to follow to understand what the task required
+The planning stage was somewhat accurate in predicting the actions needed to take for the required task
+None, it all worked very well.
+--------------------------------
+
+AP-UE
+--------------------------------
+
+nan
+Planning stage seemed generally well broken up into the proper steps
+Everything in the planning was clear.
+well planned out
+The planning was very well-organized and detailed for the LLM Assistant
+I found it slightly confusing because of the way the words and lines of writing are spaced out
+It was cool to see everything laid out in such a methodical and specific manner. 
+No comment
+It worked well, task was clear and the planning stage was easy to understand and read.
+The planning was laid out fine, everything was easy to read and understand.
+No further comments, it was quite self explanatory.
+The planning process is well-structured, with clear and logical steps that make it easy to follow and execute tasks. Breaking down tasks into smaller, manageable actions is particularly effective.
+n.a
+It was an interesting tool, I found it to be very helpful for planning. 
+i thought it was very handy and it was good to see an insight into
+Same as the tutorial answer
+Very thorough and detailed
+It provided essential and understandable procedures to execute making it very reliable
+It all worked quite well
+the plans were clear
+No comments
+While certainly useful, in its current form it is likely too complex for the layperson, who could easily fall into grievous error using such a system.
+nothing to say
+Easy to plan
+The planning stages are easy to follow and logically make sense from an outside perspective
+Clear & simple to read and understand
+It was definitely impressive. A little confusing at first but the more I used it the more I understood it
+User friendliness, make more human. 
+nice one
+it is very good
+Great work.
+Helpful in planning 
+Straight forward
+No comments
+It seemed logical 
+That part seemed to work well, although had to refresh the page once
+It became more difficult to use as it ran into errors. There should be more options to check things is an easier way.
+It was good to see the plan laid out but some plans had too many steps
+It was confusing at first for me but I got the hang of it.
+No additional comments
+Understand your needs: By paying attention to your queries and preferences, I tailor my responses to be as useful and relevant as possible.
+This was very interesting, but I think it might be too complex for a basic consumer
+None.
+It is quite useful in planning and executing, provided with clear instructions. 
+planning is was okay to follow
+no comments or remarks sorry
+Although sometimes difficult it was a fun task!
+good planning
+The planning stage was very thorough.
+It's hard to tell how it would work IRL
+The Planning stage is Very descriptive and confident in its ability
+nan
+Overall the plans of the LLM Assistant were detailed, clear and well thought out.
+The step by step instruction in the planning stage helps to understand the big picture and the elements or variables that requires to be captured to achieve the outcome. 
+The planning typically seemed to be well thought through
+The planning stage is quite comprehensive and needs careful attention to validate. 
+after doing the planning several times, I found that easier to understand. 
+Sometimes, the plans did not contain all the details. For example, I got worried about the one where it had to set the schedule. When I read the plan, it didn't mention anything about making sure the time was set to 8pm but ONLY for Thursday, so I was looking for the part where the ai was supposed to set it back to 7:30 for the other days. I only learned that it already did that when I saw it being executed. The plan should've mentioned this right in the beginning.
+No comment
+The planning stage was super interesting. I liked being able to see what the LLM was thinking and how it was trying to execute the plans.
+Being meticulous about each step and task given to the system
+I want the instructions to be more simplified.
+none
+the planning stage was well thought out
+--------------------------------
+
+UP-AE
+--------------------------------
+
+It's logical and comprehensible, however it could use some better visual interface of splitting, maybe some gestures
+When you add or split a task it often goes wrong and deletes the wrong line or adds a new one in the wrong place
+nan
+It was confusing
+The brief information it provides is very good to understand and work it.
+Gretat functionality
+Instructions need to be clearly stated
+It was really fiddly to get the commands in the right place, when you split them it didn't make much sense for e.g your on step 2.1 and you split step it will just go to 4. 
+nan
+Planning Stage: Clear, detailed steps; splitting tasks improved organization and clarity. Helpful in managing complexity.
+I found it really difficult compared to the tutorial. I was really struggling to decide what to split and what to edit.
+i think it could be made less over complicated 
+lots of information there, not sure how much of it was needed
+It is a very clear instructions method.basically you telling the system what to do I love it.
+The planning stage is clear but could use more examples to guide when to split, add, or delete steps.
+highly technical
+the editor needs an Undo button
+The systems are working correctly
+I found it quite difficult to determine whether the pre-set steps were sufficient to accomplish the task, reading through them them typically made sense and matched the task descriptor but I didn't feel that I had enough familiarity with how the system would work or how it would interpret instructions to be confident in deciding if the steps would succeed or fail.
+It was easy to follow what was being expected
+i think it can be simplied 
+I felt like there was not much for me to do
+Very easy to use.
+Looks promising.
+enjoyed the tasks
+The process is very organized and clear. 
+I felt that the actual process of doing it was better than I thought it would be, though I was sad I couldn't go back and fix errors—I realized what I'd done only after seeing it run.
+After the study, it was interesting to see how it worked!
+no comment
+I had a great time learning and processing these tasks
+Difficult and time consuming
+Worked quite well
+none
+nan
+I dont like it
+nan
+It is not user friendly for people not familiar with this kind of process
+I found it difficult with so many steps to understand if I was deleting the correct steps or adding where I didn't need to
+It was easy to understand
+nan
+None
+one must be very careful to aviod mistakes , as it affects the execution
+It was easier to understand when I was actually participating in the study, though I felt it was hard to understand exactly what the system needed to function and exactly how I could improve things.
+Planning stage of the LLM assistant seemed pretty well designed, I like how easy it was to add rules and instructions.
+None
+nan
+Instructions were wordy and would benefit from being reduced
+I'm not sure if that was supposed to be very mentally challenging but it was! I felt like I needed to understand coding or be some kind of computer nerd 
+Sometimes steps disappeared when clicking on split, seems buggy
+The planning stage was interesting. I wish there was a reset button that allowed me to reset to the original steps in case I accidentally deleted or edited something.
+The planning stage effectively breaks down tasks into detailed steps, ensuring clarity. However, incorporating more context-specific details or potential issues could enhance the accuracy of the plans.
+It got easier to understand how to plan the assistant properly after seeing it execute the plans the first few times
+Ensuring all the details are highlighted such as inputs and outputs are highlighted not just bracketed.
+It was the hardest part.
+LANGUAGE IS CLEAR
+This is a great work and I hope this project is successful.
+It was good - I felt like I barely had to change the plans - Sorry if I was doing something wrong
+No comments
+No comments 
+na
+I enjoyed figuring it out
+--------------------------------
+
+UP-UE
+--------------------------------
+
+Would be useful to have drag and drop functionality to change order in planning stages, if the template is already present.
+The assistant was very useful and hardly made any errors
+This was a very well thought out system
+The tutorial made it seem like it was going to be very difficult, but very little changes were actually needed in the tasks.
+nan
+Sometimes steps were unnecessary, but I removed them in the case
+The planning stage was detailed and structured
+The planning stage was a bit confusing for me since there are a lot of things to consider but it was fun
+the planning stage seemed to go pretty well and needed little adjustments
+Innovative
+It was a useful tool to use, once you got to grips with it, it was nice to feel more confident about the process and the eventual outcome. It's nice to be part of the process through interaction and planning while the Assistant does the work, I would like to use this.
+This was difficult to use and frustrating 
+None
+nan
+none
+It seemed to work well as long as the directions were correct.
+Jumped around with different tasks, didnt know if it would skip steps or not. I should have split more
+I had difficulty with the planning stages it was a lot to digest and took a lot of energy to understand.
+A bit unreliable as it can make mistakes
+N comments to make
+Sometimes it was hard to identify when to split steps or when it missed a parameter such as querying back to previous steps to use information it had sourced. 
+none
+It didn't seem like there was ever much that needed changing.
+It was long complicated compared to the time given. 
+When shown step-by-step it made sense, but it was not always clear to me what the steps would be. 
+seemed to work well.
+When it comes to the planning stage it seems to me that the plans that were provided by default, seem to have fit rather well without human intervention. 
+i found it really helpful, but made me slightly nervous thinking all my plans being successful are in the hands of ai tech 
+The planning stage was very reliable for simple tasks, but seem to struggle with more "free-flowing" ones such as planning an itinerary. 
+It was slightly confusing.
+It's ok
+Nothing to add, just feels very cold
+I thought I was understanding what to do, but became confused as to what constituted one action and, therefore, what required another step. 
+The planning stage was absolutely fantastic 
+The planning was very time consuming.
+the assistant was thorough in its planning
+nan
+The planning was really challenging, and I mostly left the default plans (they looked fine). This worked in the main, but a couple clearly needed revisiting. I would approach this iteratively : plan, test, observe, back to planning, then another test, before reaching the desired outcome.
+It   is clear to understand.
+The planning stage required a fair bit of effort to complete.
+For the planning stage of LLM Assistant, I liked how it executed each required steps of the user's request by including sub-steps, such as 3, 3.1, 3.2 and so on. 
+I enjoyed working with it
+I really struggled to edit tasks when I made a mistake, it was impossible to correct
+The Planning stage was easy to use and understand
+The LLM assistant wa easy to follow, i needed to thoroughly think of each step to ensure there were no errors
+none at this time
+The planning stage contained clear instruction of what to do in the task.
+I suggest to have a safeguard measure for when an error arises that doesn't match up with the customer's requirements.
+I think it was interesting but it takes a lot of set up to do the basic tasks. This seems counter intuitive as you need to feed a lot of information to the system to get it to undertake the tasks.
+I found it quite difficult to see where things could really be improved.
+everything is pretty explanatory, but I am one of those people that is not good at explaining things like this, not necessarily to say that it is hard because I did it, and I figured it out but necessarily the terms and the things that I should be saying because for me, everything worked great I understood completely what I was supposed to do. I didn’t get mixed up or confused except for maybe a few times, I experience no technical issues.
+No comments
+None
+It was fun to use but sometimes confusing. 
+it was interesting to learn more about this subject
+The planning stage was straightforward
+It was hard to think of what might need to be changed during the planning stage as sometimes the plan looked fine.
+The LLM Assistant seems confusing and its wording is not very clear.
+the planning stage of the LLM assistant was helpful and trustworthy
+straightforward
+--------------------------------
+

@@ -1,0 +1,25 @@
+.hidden {
+    display: none;
+}
+
+/*img {
+    max-width: 256px;
+    max-height: 256px;
+    height:auto;
+    zoom:expression( 
+        function(e) {
+            if(e.width>e.height) {
+                if (e.width>128) {
+                    e.height = e.height*(128 /e.width);
+                    e.width=128; 
+                }}
+            else {
+                if (e.height>128) {
+                    e.width = e.width*(128 /e.height);
+                    e.height=128;
+                }
+            }
+            e.style.zoom = '1';     
+        }(this));
+    overflow:hidden; 
+}*/

@@ -1,0 +1,36 @@
+{% extends 'bootstrap_base.html' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block header %}
+<div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    <h1 class="card-title text-center">Chat Interface</h1>
+    <h3 class="card-text text-justify">Check the chat interface. </h3>
+  </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chat.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+<h3><span class="badge rounded-pill text-bg-primary">Chat Interface:</span></h3>
+<!-- <p class="text-justify"> To help you check the complex fact, please follow the intermediate step to check current fact. Please check the step below.</p> -->
+<p class="text-justify"> Let's check the execution interface with chat. </p>
+
+<div class="chat-container">
+    <div class="chat-area" id="chatArea">
+        <!-- Messages will be dynamically inserted here -->
+    </div>
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="Type your message here...">
+        <button onclick="sendChat()" id="send_button">Send</button>
+    </div>
+</div>
+
+<!-- Link to the external JavaScript file -->
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+
+{% endblock %}
+

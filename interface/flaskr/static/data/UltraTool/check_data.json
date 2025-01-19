@@ -1,0 +1,27 @@
+{
+    "question": "I need to first check the credit status of my company 'VenusTech' today, and then further understand our credit rating based on the company's unique identifier 'QM9571' and the industry it belongs to 'Information Technology Services'.", 
+    "plan": 
+        [
+            {"step": "1. Check company credit status", "tool": "null"}, 
+            {"step": "1.1 Obtain company name and check date (Company name: VenusTech, Check date: today's date)", "tool": "No tool required"}, 
+            {"step": "1.2 Check credit status", "tool": "company_credit_check(companyName='VenusTech', country='China', checkDate='today's date')"}, 
+            {"step": "1.3 Record credit status inquiry results (Credit score: obtained credit score, Credit level: obtained credit level, Credit status: obtained credit status)", "tool": "No tool required"}, 
+            {"step": "2. Understand company credit rating", "tool": "null"}, 
+            {"step": "2.1 Obtain company unique identifier and industry (Enterprise ID: QM9571, Industry type: Information Technology Services)", "tool": "No tool required"}, 
+            {"step": "2.2 Query credit rating", "tool": "enterprise_credit_rank(enterpriseID='QM9571', assessmentDate='today's date', industryType='Information Technology Services')"}, 
+            {"step": "2.3 Record credit rating inquiry results (Credit rating: obtained credit rating)", "tool": "No tool required"}
+        ], 
+    "tools": 
+        [
+            {"name": "company_credit_check", "description": "Enterprise Credit Inquiry Tool", "arguments": {"type": "object", "properties": {"companyName": {"description": "The name of the company being queried", "type": "string"}, "country": {"description": "The country or region where the enterprise is located", "type": "string"}, "checkDate": {"description": "The date of inquiry", "type": "string", "format": "date-time"}, "reportingPeriod": {"description": "Reporting period", "type": "string"}, "region": {"description": "The region where the company is located", "type": "string"}, "checkType": {"description": "Type of inquiry, conducting queries around various aspects of enterprise credit", "enum": ["financial", "legal", "business"], "type": "string"}}}, "results": {"type": "object", "properties": {"credit_score": {"description": "The credit score of the enterprise", "type": "integer"}, "credit_rating": {"description": "Credit rating of the enterprise", "type": "string"}, "credit_status": {"description": "The credit status of the enterprise being queried", "type": "string"}}}}, 
+            {
+                "name": "enterprise_credit_rank", 
+                "description": "Enterprise Credit Rating Tool", 
+                "arguments": 
+                {
+                    "type": "object", "properties": {"enterpriseID": {"description": "Unique identifier of the enterprise", "type": "string"}, "assessmentDate": {"description": "Assessment date", "type": "string"}, "industryType": {"description": "Industry category of the enterprise", "type": "string"}}}, "results": {"type": "object", "properties": {"creditRating": {"description": "Enterprise credit rating", "type": "string"}}
+                }
+            }
+        ], 
+    "domain": "Finance"
+}

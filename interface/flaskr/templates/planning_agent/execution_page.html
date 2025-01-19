@@ -1,0 +1,208 @@
+{% extends 'bootstrap_base.html' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block header %}
+<div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    {% if task_index == 0 %}
+    <h1 class="card-title text-center">Example for Execution</h1>
+    {% else %}
+    <h1 class="card-title text-center">Execution - Task {{task_index | safe}} / {{task_total | safe}}</h1>
+    {% endif %}
+    <h3 class="card-text text-justify">In the execution stage, the plan generated in the planning stage will be executed step by step. In our study, we provide a conversational interface to show you the process. Only after the execution is done, you can move forward to next task. Please click button 'Start' to start the execution.</h3>
+  </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chat.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="sticky-top">
+    <div class="card text-dark bg-light">
+        <div class="card-header">
+            <h2>Task Description:</h2>
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p class="text-justify">{{ tp_query | safe}}</p>
+            </blockquote>
+            <!-- Button trigger modal -->
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="record_user_action(action='show_potential_actions', action_input={'page': 'execution|{{task_index}}'})">
+                    Show Potential Actions
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Action View</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3><span class="badge rounded-pill text-bg-dark">Task Description:</span></h3>
+                <p class="text-justify"> {{ tp_query | safe}} </p>
+
+                <h3><span class="badge rounded-pill text-warning">Note:</span></h3>
+                <p class="text-justify"> You can check each action by clicking the action name in the left panel. Description and necessary parameters will be provided to help you understand what our LLM assistant can do in this task. Please ignore the parameter UserID, which is automatically managed by our system.</p>
+                
+
+            <h3><span class="badge rounded-pill text-bg-warning">Actions:</span></h3>
+  
+  
+            {% if action_list|length == 0 %}
+                <p class="text-justify"> None </p>
+            {% elif action_list|length > 0 %}
+                <div class="row">
+                    <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            {% for item in action_list -%}
+                                {% if loop.index == 1 %}
+                                    <a class="list-group-item list-group-item-action active" id="list-{{loop.index}}-list" data-bs-toggle="list" href="#list-{{loop.index}}" role="tab" aria-controls="list-{{loop.index}}">
+                                    {{ item["tool_name"] }}
+                                    </a>
+                                {% else %}
+                                    <a class="list-group-item list-group-item-action" id="list-{{loop.index}}-list" data-bs-toggle="list" href="#list-{{loop.index}}" role="tab" aria-controls="list-{{loop.index}}">
+                                    {{ item["tool_name"] }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            {% for item in action_list -%}
+                                {% if loop.index == 1 %}
+                                    <div class="tab-pane fade show active" id="list-{{loop.index}}" role="tabpanel" aria-labelledby="list-{{loop.index}}-list">
+                                        <p class="h2">Tool Description: </p>
+                                        <p class="h4"><code>{{item["description"]}}</code></p>
+                                        <p class="h2">Action Required Parameters: </p>
+                                        <dl class="row">
+                                            {% for key in item["schema"] -%}
+                                            <dt class="col-sm-3">{{item["schema"][key]["title"]}}</dt> <dd class="col-sm-9">{{item["schema"][key]["description"]}}</dd>
+                                            {% endfor %}
+                                        </dl>
+                                        <!-- <ol>
+                                            {% for key in item["schema"] -%}
+                                            <li>{{item["schema"][key]["title"]}}: {{item["schema"][key]["description"]}}</li>
+                                            {% endfor %}
+                                        </ol> -->
+                                    </div>
+                                {% else %}
+                                    <div class="tab-pane fade" id="list-{{loop.index}}" role="tabpanel" aria-labelledby="list-{{loop.index}}-list">
+                                        <p class="h2">Tool Description: </p>
+                                        <p class="h4"><code>{{item["description"]}}</code></p>
+                                        <p class="h2">Action Required Parameters: </p>
+                                        <dl class="row">
+                                            {% for key in item["schema"] -%}
+                                            <dt class="col-sm-3">{{item["schema"][key]["title"]}}</dt> <dd class="col-sm-9">{{item["schema"][key]["description"]}}</dd>
+                                            {% endfor %}
+                                        </dl>
+                                        <!-- <ol>
+                                            {% for key in item["schema"] -%}
+                                            <li>{{item["schema"][key]["title"]}}: {{item["schema"][key]["description"]}}</li>
+                                            {% endfor %}
+                                        </ol> -->
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+<div class="chat-container">
+    <div class="chat-area" id="chatArea">
+        <div id="messages">
+            <!-- Messages will be dynamically inserted here -->
+        </div>
+        <div id="dots">
+            <!-- Messages will be dynamically inserted here -->
+        </div>
+    </div>
+    <div class="input-container">
+        <input type="text" id="userInput" placeholder="Click Start to start the execution" disabled>
+        <button onclick="sendChat()" id="send_button">Start</button>
+    </div>
+</div>
+
+{% macro _hz_form_wrap(horizontal_columns, form_type, add_group=False, required=False) %}
+    {% if form_type == "horizontal" %}
+        {% if add_group %}
+            <div class="form-group row{% if required %} required{% endif %}">{% endif %}
+        <div class="offset-{{ horizontal_columns[0] }}-{{ horizontal_columns[1] }}
+              col-{{ horizontal_columns[0] }}-{{ horizontal_columns[2] }}
+             ">
+    {% endif %}
+    {{ caller() }}
+{% endmacro %}
+
+{% macro render_radio_field(field,
+                    form_type="basic",
+                    horizontal_columns=('lg', 2, 10),
+                    button_map={},
+                    button_style='',
+                    button_size='') %}
+  {% if field.flags.required and not required in kwargs %}
+      {% set kwargs = dict(required=True, **kwargs) %}
+  {% endif %}
+
+  {% set extra_classes = ' ' + field.render_kw.class if field.render_kw.class else '' %}
+
+  <div class="form-group required">
+      {{ field.label(class="form-control-label")|safe }}<br>
+      {#% call _hz_form_wrap(horizontal_columns, form_type, True, required=required) %#}
+      {% for item in field -%}
+          <div class="form-check form-check-inline">
+              {{ item(class_="form-check-input")|safe }}
+              {{ item.label(class="form-check-label", for=item.id)|safe }}
+          </div>
+      {% endfor %}
+  {#% endcall %#}
+  {%- if field.errors %}
+      {%- for error in field.errors %}
+          <div class="invalid-feedback" style="display: block;">{{ error }}</div>
+      {%- endfor %}
+  {%- elif field.description -%}
+      <small class="form-text text-muted">{{ field.description|safe }}</small>
+  {%- endif %} 
+  </div>
+{% endmacro %}
+
+<div class="alert alert-warning" role="alert">
+    Note: only after all steps are executed, you will be enabled to submit this task and move forward.
+</div>
+
+<form action="" method="post" class="form" role="form">
+    {{form.hidden_tag()}}
+
+    <h3><span class="badge rounded-pill bg-danger">Trust --- Indicate your perceptions:</span></h3>
+    {{ render_radio_field(form.correctness) }}
+    <br>
+
+    <h3><span class="badge rounded-pill bg-warning text-dark">Confidence --- Indicate your perceptions:</span></h3>
+    {{ render_radio_field(form.confidence) }}
+    <div class="d-grid">
+      <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit"  style="display:none;" value="Execution done, move forward to next task">
+    </div>
+</form>
+
+<!-- Link to the external JavaScript file -->
+<script src="{{ url_for('static', filename='js/execution.js') }}"></script>
+
+{% endblock %}
+

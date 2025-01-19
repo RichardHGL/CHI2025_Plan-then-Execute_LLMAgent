@@ -1,0 +1,271 @@
+AP-AE
+--------------------------------
+
+nope.
+fun study but also mentally taxing
+None
+It was good.
+The study was well explained and functioned as expected.
+none
+None
+nan
+No other comments.
+No that's everything
+Interesting study, but I think it takes a little more than 30 mins, but maybe it's just me.
+no
+Just work on more user-friendly instructions. 
+I thought it an enjoyable and interesting study, thanks
+nan
+not really, the study was quite pleasant actually, I've never used such assistants
+It was enganing and fun
+none
+it improved my understanding on AI
+no other feedback
+great study and i hope this system is fully implemented
+nan
+nan
+♡ thank you so much ♡
+none
+the study was okay
+I dont have comments
+none
+nan
+None
+nan
+GOOD
+no
+Generally I enjoyed taking the study as it was interesting
+nan
+The study was good and provided LLM worked well
+Perhaps I am underrating the average persons computer literacy, but similarly to what I mentioned regarding the planning stage, the whole study felt like it was geared toward a computer science course rather than the average person
+nil
+I tried my best for this study but some times there was too much information for my brain to handle 
+Tutorial was harder than study
+no other remarks
+none! this was super interesting.
+None
+Several of the tasks seemed to be missing important steps, yet still completed 'correctly.' But, as I know nothing of such systems, I assume that it was just part of the study. Good luck with your research!
+nan
+nan
+No comments
+I was a bit unclear at first on what was being asked of me. I am still slightly unsure of whether the tasks where a failure was indicated meant the system could work things out on its own our whether the task would not be successfully completed.
+there was no technical challenges that impacted my experience 
+This was intense, I really had to think about things and in the end I was still unsure about a lot of things. Thank you for allowing me to participate. 
+I feel the study could be more interactive than it is. 
+interesting study
+Insightful and informative study topic.
+no
+No, thank you for letting me participate. Have a good rest of your day!
+A bit wordy.  Less is more.  
+This was fun thank you
+Great study.
+no comment
+nan
+No other comments
+It can be improved by using less text and more visual information.
+It was a little confusing at first, but I got the hang of it.
+--------------------------------
+
+AP-UE
+--------------------------------
+
+nan
+I hope I conducted the steps as accurately as possible. The interaction with the chat didn't always produce the response I was expecting.
+None.
+great system hope to know in what stage of dev it it inn
+There is room for improvement, particularly in ensuring that all tasks are completed and that no tasks are overlooked.
+I found it confusing at first but think i managed to understand eventually
+No.
+No comment
+nan
+The study was a lot of fun, it was nice to learn the system and try and guide it to the right choices.
+Overall the study was interesting as I've never done anything like this before. But it was mentally challenging and time consuming and therefore, the price of the base reward should be a lot higher.
+The study does a good job of emphasizing user experience by asking about perceptions of risk, trust, and confidence. This approach ensures that the evaluation is user-centric, which is important for assessing the real-world applicability of the LLM Assistant.
+n.a
+no
+it was handy for me to see how an ai model would work as i a rather skeptical of ai but i felt at ease using this model
+Same as the tutorial answer
+very interesting overall
+No more feedback 
+It was interesting but quite technical
+none
+No comments
+I hope my efforts resulted in usable data, as I did find interacting with the system to be rather complicated, especially initially.
+went well
+nan
+instructions during the tutorial are a bit confusing, I was only able to understand fully when interacting with the execution system and through the tasks
+Fun study
+I think it would be helpful if you walked us through an example or two first. Maybe in a video-type format where we can see how to use it properly. Only being able to read about it definitely made it difficult and somewhat confusing. Just a thought
+The instructions feel a bit overwelheming and I think less would still do
+nice one
+it is an interesting one
+No
+thank you, it was an eye opener
+The execution stage was more intuitive. The tutorial made it seem more complicated than it actually was
+This survey is too long and incredibly tedious
+It was actually very interesting and its something i wouldnt mind trying again 
+nope. cheers
+It was very interesting and makes me want to explore automation more.
+no
+Their is alot of information to udnerstand for a new user.
+No additional comments
+Continuous Learning: Regular updates and improvements based on user feedback and advancements in technology can keep the assistant relevant and effective.
+This was very engaging. Thanks for the opportunity to participate!
+The study was quite long and mentally demanding for the level of payment offered. Otherwise, I found it quite interesting.
+Additional verification in each step would have been helpful. 
+nan
+no comments or remarks sorry
+I enjoy the study, I feel I could do more once I really understood it
+none
+Interesting! Thank you for the opportunity!
+This was very hard. I hope I did well. 
+Besides a few errors the system was interesting and quite reliable
+I tried my best, when I attempted to give feedback during the task it didn't seem to have any effect on the assistant.
+The instructions at the beginning of the task could be improved by making them to be less wordy/complex and more streamlined in order to make the task more understandable and less challenging at the first insight.
+Both plan and execution step visibility helps to evaluate the risks, the gaps and any deviations during the AI process. Very similar to MATlab processor coding, but in a more human readable and understandable manner.
+no
+nan
+this was interesting!
+This was very interesting thanks!
+No comment
+Very fun and interesting study. Thank you for the opportunity. 
+none
+No other comments
+none
+Thank you
+--------------------------------
+
+UP-AE
+--------------------------------
+
+No
+I think the instructions could be clearer about the planning stage and the expectations
+nan
+None
+It was a very great system and it worked very well.
+autonomous assistance
+none
+Mentally im drained but in a good way, it took me till like task 3 out of the 6 to properly understand it, 
+nan
+Overall: Intuitive and effective. Consider adding templates and more customization options for enhanced usability.
+I think the task was pretty challenging and could maybe do with a slightly better explanation on what to edit and split ect.
+None - i think it would good and i enjoyed using the assistant 
+no
+I loved the study so much
+    Implement automatic suggestions for common tasks to improve planning.
+
+
+automated systems are the next big thing.
+I accidentally deleted the entire beginning of the decision tree on Question 5, I did my best to reproduce it from memory but the execution failed - I feel like that was an error on *my* part, not the system
+This is a trustworthy assistant
+I think it would be quite complicated to follow without any technical background. One possible improvement would be an 'undo' or 'reset' button in case you delete a step without meaning to, or also an ability to test it prior to submission to see if/when the steps fail.
+It was good to see how things can change with one small change in information
+the above system is good but it is a bit complicated
+no other feedback
+Very fun study.
+It was intriguing and interesting.
+nan
+INTERESTING STUDY. 
+I think the pay should be higher for the time and mental load.
+None. 
+no comment
+I want to do this more often to understand the LLM Assistant.
+The study duration was underestimated and pay too low given difficulty. 
+.
+Overall I think the system works very well and is impressive. Although I was worried whether I did the task right as I did not have to do much editing or correction of the system. I checked everything and it seems to get it correct each time. In a real world process however I would have to check each task to make sure it was doing it correctly so I don't know how much of a time saver it would be.
+nan
+no
+Awesome experience
+I would not trust LLM to do the tasks in the examples, I would prefer to do them myself.
+I found it challenging but enjoyed trying this as a new thing for me with a system like this
+This is a good assistant
+nan
+None
+none for now
+In retrospect, the tutorial would be better replaced with an example. Either a video of someone going through their thought process, or just an extra task with no cash incentive to let users get used to the system.
+Nothing to add.
+None
+It was not always clear what the issue was with each task.
+nan
+As above!
+Not enough reward payment for a lot of cognitive load and a long time of work
+Fun study
+The study provides a structured approach to task execution with an emphasis on clarity and verification. Incorporating real-time adjustments based on feedback could further improve its effectiveness.
+No issues at all.
+The study was interesting to see how LLM was developed, planned and executed.
+It was an interesting study
+nan
+None
+I was a bit confused as I felt like the plans given were already basically 100% correct. I am not sure if I was doing something wrong, if I was, sorry. I sent you a message about this.
+No comments
+no
+na
+I didn't have enough time and dont think i will get paid. D.:
+--------------------------------
+
+UP-UE
+--------------------------------
+
+nan
+Fantastic study!!
+Thanks for letting me take part!
+no
+nan
+no thank you
+I would rather a hand holding guide at the start to take me through the steps piece by piece. I found that I learned as I engaged in the task rather than reading the instructions at the start.
+The study was so fun and educational. It is perfect in todays generation
+thank you
+Amazing
+No further feedback - interesting study/tool
+This made me feel dumb
+None
+nan
+none
+I felt like this study was interesting but took much longer than stated.
+None
+More examples to start with and maybe start with the simpler tasks first.
+No
+No suggestions to make
+This was a very challenging but very interesting survey. I wouldn't mind doing more of these now that I've learned a little about it!
+The instructions need to be "dumbed down". 
+None.
+The study was too long for the assigned time hence creating anxiety about the completion of the study.
+nan
+interesting study!
+Overall I didn't feel like much input was actually needed from me. The instructions as laid out all seemed to address the vast majority of the plan. I inserted what I thought might be helpful, but overall the AI seemed rather robust and didn't need much from me.
+i loved it! I cannot wait to join the next 
+Well thought out study and is explained well. I still would like see the instruction have a video-format for people less "technologically able". But I am very interested to see what comes next. 
+Thank you. 
+nan
+no
+I think being able to expand or collapse the steps in the planning stage would help make it easier. Also, a drag and drop facility with the required fields would also help. 
+
+None
+No.
+none
+I thought I understood what was going on but by the end I realised I didn't. For me It would take a long time to work out the logic of each step and work out what was happening from one step to the next. I'm too old and stupid to be able to complete this task successfully. The paltry pay didn't incentivise spending longer to try and work it out. 
+Despite being a little confused at the tutorial stage, I rather enjoyed this exercise.
+The study is awesome.
+The loading time between some pages was unreasonably long.
+The task was mentally exhausting, but I thought it was fun to see the workaround of LLM Assistant.
+nan
+nan
+The inability to make changes to get the desired result from the execution stage was annoying 
+None
+none
+Everything worked perfectly
+nan
+no
+It was a little hard for someone with little experience of the LLM Assistant.
+I believe that mostly all of these were correct. I might’ve missed a few questions here and there, but for the most part I feel like I did pretty good on this task and I really enjoyed doing this study. I would definitely take another study like this again.
+No comments 
+None
+nan
+i think you did a good job
+I thought I fully understood the tasks but quickly found out that I didn't. As I completed more tasks, I started to understand more.
+nan
+nan
+no further information needed to add here
+No
+--------------------------------
+

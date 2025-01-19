@@ -1,0 +1,141 @@
+{% extends 'bootstrap_base.html' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block header %}
+<div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    <h1 class="card-title text-center">Task {{task_index | safe}} / {{task_total | safe}}</h1>
+    <h3 class="card-text text-justify">Based on the fact to check, our AI system generates decomposed steps to solve it step by step. </h3>
+  </div>
+</div>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/planning.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+<!-- <h3><span class="badge rounded-pill text-bg-primary">Task Description:</span></h3>
+<p class="text-justify"> In each task you will be presented with a composite fact to check (i.e., in each task there are multiple sub-facts that need to be checked to determine the factual accuracy of the composite fact). To check each composite fact, we present a set of decomposed sub-facts for your convenience. Please follow the decomposed intermediate steps. </p> -->
+
+<div class="sticky-top">
+    <div class="card text-white bg-info">
+        <div class="card-header">
+        <h2>Task Description:</h2>
+        </div>
+        <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p class="text-justify">{{ tp_query | safe}}</p>
+        </blockquote>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Show Potential Actions
+        </button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Task {{task_index | safe}} / {{task_total | safe}}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3><span class="badge rounded-pill text-bg-dark">Task Description:</span></h3>
+          <p class="text-justify"> {{ tp_query | safe}} </p>
+
+          <h3><span class="badge rounded-pill text-bg-warning">Actions:</span></h3>
+          
+          
+            {% if action_list|length == 0 %}
+              <p class="text-justify"> None </p>
+            {% elif action_list|length > 0 %}
+                <div class="row">
+                    <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            {% for item in action_list -%}
+                                {% if loop.index == 1 %}
+                                    <a class="list-group-item list-group-item-action active" id="list-{{loop.index}}-list" data-bs-toggle="list" href="#list-{{loop.index}}" role="tab" aria-controls="list-{{loop.index}}">
+                                    {{ action_list[loop.index]["tool_name"] }}
+                                    </a>
+                                {% else %}
+                                    <a class="list-group-item list-group-item-action" id="list-{{loop.index}}" data-bs-toggle="list" href="#list-{{loop.index}}" role="tab" aria-controls="list-{{loop.index}}">
+                                    {{ action_list[loop.index]["tool_name"] }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            {% for item in action_list -%}
+                                {% if loop.index == 1 %}
+                                    <div class="tab-pane fade show active" id="list-{{loop.index}}" role="tabpanel" aria-labelledby="list-{{loop.index}}-list">
+                                        Action Required Parameters: <br>
+                                        <ol>
+                                            {% for key in action_list[loop.index]["schema"] -%}
+                                            <li>{{action_list[loop.index]["schema"][key]}}: {{action_list[loop.index]["schema"][key]["title"]}}</li>
+                                            {% endfor %}
+                                        </ol>
+                                    </div>
+                                {% else %}
+                                    <div class="tab-pane fade" id="list-{{loop.index}}" role="tabpanel" aria-labelledby="list-{{loop.index}}-list">
+                                        Action Required Parameters: <br>
+                                        <ol>
+                                            {% for key in action_list[loop.index]["schema"] -%}
+                                            <li>{{action_list[loop.index]["schema"][key]}}: {{action_list[loop.index]["schema"][key]["title"]}}</li>
+                                            {% endfor %}
+                                        </ol>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<h3><span class="badge rounded-pill text-bg-warning">Plan:</span></h3>
+<button class="btn btn-primary" onclick="addOneStep()">Add one step</button>
+  {% if tp_plan|length == 0 %}
+  <p class="text-justify"> None </p>
+  {% elif tp_plan|length > 0 %}
+  <blockquote class="blockquote">
+    <div class="bd-example">
+        <ul id="taskList" class="list-group">
+        {% for item in tp_plan -%}
+        <!-- <li contenteditable="true" id="{{item['step'] | safe}}">{{item["step"] | safe}}</li>   -->
+            <li class="input-group mb-3" data-level="{{item['data_level'] | safe}}" id="{{item['index'] | safe}}">
+                <!-- <div class="input-group mb-3"> -->
+                    <span class="input-group-text" id="p-{{item['index'] | safe}}">{{item["index"] | safe}}</span>
+                    <input type="text" class="form-control" value="{{item['step'] | safe}}">
+                    <button class="btn btn-warning" onclick="deleteTask(this.parentNode.getAttribute('id'))">Delete step</button>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    
+  </blockquote>
+  {% endif %}
+  <button class="btn btn-danger" onclick="updateplan()">Update Plan</button>
+
+<form action="" method="post" class="form" role="form">
+  <div class="d-grid">
+    <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Plan looks nice, move forward to execution" onclick="updateplan()">
+    </div>
+    {{ render_field(form.submit_button) }}
+</form>
+
+<script src="{{ url_for('static', filename='js/planning.js') }}"></script>
+
+{% endblock %}
+

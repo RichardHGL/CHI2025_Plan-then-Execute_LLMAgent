@@ -1,0 +1,56 @@
+{% extends 'bootstrap4_base.html' %}
+{% from 'bootstrap4/form.html' import render_field %}
+
+{% block content %}
+
+<!-- <div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    <h1 class="card-title text-center">Consent Form</h1>
+    <h3 class="card-text text-bg-secondary">
+      In this study, you need to work with large language models on daily scenarios like tracking parcels and ordering food in a restaurant etc. All tasks are based on simulation environment, we will not ask for any of your privacy information.
+    </h3>
+    <br>
+  </div>
+</div> -->
+<br>
+<div class="card text-bg-secondary mb-3">
+  <div class="card-header text-center">
+    <h1>Consent Form</h1>
+  </div>
+  <div class="card-body">
+    <p class="card-text">You are being invited to participate in a research study on daily scenarios like tracking parcels and ordering food in a restaurant. We are interested in understanding how people collaborate with AI systems in these tasks and understand whether these assistants are useful. Before deciding whether to participate, it is important for you to understand why the research is being conducted and what it will involve. Please read the following information carefully before deciding whether to participate.</p>
+
+    <h4>Purpose:</h4>
+    <p  class="card-text">The purpose of this experiment is to examine how people work with AI systems as <code>daily assistants</code>. During the study, you will be asked to review and analyze various common daily jobs, including booking flights, planning a trip, tracking parcel and checking bank card. The AI assistant is built on top of <code>large language models</code>. You will make plan together and exectute the plan to obtain task outcomes.</p>
+
+    <h4>Confidentiality:</h4>
+    <p  class="card-text">All data collected during the experiment will be treated as confidential. Your responses will be recorded anonymously and we will not collect any personally identifying information.</p>
+
+    <h4>Consent:</h4>
+    <p class="card-text">By clicking the "Confirm and Continue" button on this page, you confirm that you have read this consent form, understand the procedures involved in the experiment, and freely consent to participate in the study. You also understand that your answers will be recorded for research purposes and that your data will be kept confidential.</p>
+  </div>
+</div>
+
+<form action="" method="post" class="form" role="form">
+    {{form.hidden_tag()}}
+
+    <h3><span class="badge rounded-pill text-bg-warning">User Experience</span></h3>
+        {{ render_field(form.llm_expertise) }}
+        
+        {{ render_field(form.assistant_expertise) }}
+<!-- <div class="d-grid">
+    <input class="btn btn-success" id="submit_button" name="submit_button" type="submit" value="Confirm and Continue">
+</div> -->
+<!-- <div class="d-grid"><input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Confirm and Continue"></div> -->
+<div class="d-grid"><input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Submit"></div>
+</form>
+
+{% endblock %}
+
+{% block extra_scripts %}
+<script  type="text/javascript">
+  function updateTextInput(id, val) {
+    document.getElementById(id).innerHTML=val; 
+  }
+</script>
+{% endblock %}

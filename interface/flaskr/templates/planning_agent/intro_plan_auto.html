@@ -1,0 +1,247 @@
+{% extends 'bootstrap_base.html' %}
+
+{% block header %}
+
+<div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+      <h1 class="card-title text-center">Stage I: Planning</h1>
+      <h3 class="card-text text-justify">The Large Language Model (LLM) assistant will first generate a draft plan. In this study, you are not allowed to edit the plan.</h3>
+  </div>
+</div>
+
+<style>
+
+    .bd-example {
+        padding: 0.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 0.5px;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        background-color: bisque; /* set the background color to red */
+    }
+
+    .task-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .task-item {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .task-item input[type="text"] {
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    .task-item button {
+        margin-right: 5px;
+    }
+
+    .add-btn {
+        margin-top: 10px;
+    }
+
+    /* Indentation based on data-level */
+    .task-item[data-level="2"] {
+        padding-left: 20px;
+    }
+
+    .task-item[data-level="3"] {
+        padding-left: 40px;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="sticky-top">
+    <div class="card text-dark bg-light">
+        <div class="card-header">
+            <h2>Task Description:</h2>
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p class="text-justify">{{ tp_query | safe}}</p>
+            </blockquote>
+            <!-- Button trigger modal -->
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="show_action" onclick="record_user_action(action='show_potential_actions',action_input={'page':'intro_plan'})">
+                    Show Potential Actions
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Action View</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3><span class="badge rounded-pill text-bg-dark">Task Description:</span></h3>
+                <p class="text-justify"> {{ tp_query | safe}} </p>
+
+                <h3><span class="badge rounded-pill text-warning">Note:</span></h3>
+                <p class="text-justify"> You can check each action by clicking the action name in the left panel. Description and necessary parameters will be provided to help you understand what our LLM assistant can do in this task. Please ignore the parameter UserID, which is automatically managed by our system.</p>
+                
+
+            <h3><span class="badge rounded-pill text-bg-warning">Actions:</span></h3>
+  
+  
+            {% if action_list|length == 0 %}
+                <p class="text-justify"> None </p>
+            {% elif action_list|length > 0 %}
+                <div class="row">
+                    <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            {% for item in action_list -%}
+                                {% if loop.index == 1 %}
+                                    <a class="list-group-item list-group-item-action active" id="list-{{loop.index}}-list" data-bs-toggle="list" href="#list-{{loop.index}}" role="tab" aria-controls="list-{{loop.index}}">
+                                    {{ item["tool_name"] }}
+                                    </a>
+                                {% else %}
+                                    <a class="list-group-item list-group-item-action" id="list-{{loop.index}}-list" data-bs-toggle="list" href="#list-{{loop.index}}" role="tab" aria-controls="list-{{loop.index}}">
+                                    {{ item["tool_name"] }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            {% for item in action_list -%}
+                                {% if loop.index == 1 %}
+                                    <div class="tab-pane fade show active" id="list-{{loop.index}}" role="tabpanel" aria-labelledby="list-{{loop.index}}-list">
+                                        <p class="h2">Tool Description: </p>
+                                        <p class="h4"><code>{{item["description"]}}</code></p>
+                                        <p class="h2">Action Required Parameters: </p>
+                                        <dl class="row">
+                                            {% for key in item["schema"] -%}
+                                            <dt class="col-sm-3">{{item["schema"][key]["title"]}}</dt> <dd class="col-sm-9">{{item["schema"][key]["description"]}}</dd>
+                                            {% endfor %}
+                                        </dl>
+                                        <!-- <ol>
+                                            {% for key in item["schema"] -%}
+                                            <li>{{item["schema"][key]["title"]}}: {{item["schema"][key]["description"]}}</li>
+                                            {% endfor %}
+                                        </ol> -->
+                                    </div>
+                                {% else %}
+                                    <div class="tab-pane fade" id="list-{{loop.index}}" role="tabpanel" aria-labelledby="list-{{loop.index}}-list">
+                                        <p class="h2">Tool Description: </p>
+                                        <p class="h4"><code>{{item["description"]}}</code></p>
+                                        <p class="h2">Action Required Parameters: </p>
+                                        <dl class="row">
+                                            {% for key in item["schema"] -%}
+                                            <dt class="col-sm-3">{{item["schema"][key]["title"]}}</dt> <dd class="col-sm-9">{{item["schema"][key]["description"]}}</dd>
+                                            {% endfor %}
+                                        </dl>
+                                        <!-- <ol>
+                                            {% for key in item["schema"] -%}
+                                            <li>{{item["schema"][key]["title"]}}: {{item["schema"][key]["description"]}}</li>
+                                            {% endfor %}
+                                        </ol> -->
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
+
+<h3><span class="badge rounded-pill bg-warning">Plan Design</span></h3>
+<ul>
+    <li>A clear plan with meaningful instruction can help provide a correct final outcome. In this study, the plan will be automatically generated by LLM Assistant.</li>
+    <li>Please notice that, Each <code>primary step (e.g., 1.) including all sub-steps (e.g., 1.x, 1.x.y)</code> will be used to generate one action to execute in the execution stage. The intermediate steps are providing details of the execution (e.g., bank card, product name).</li>
+    <li>All potential actions can be viewed with the button under task description (button <a href="#show_action">'Show Potential Actions'</a>). Please double check your plan with all potential actions before moving forward.</li>
+</ul>
+
+The running example below will show you how the plan looks like:
+
+<h3><span class="badge rounded-pill text-bg-warning">Plan:</span></h3>
+  {% if tp_plan|length == 0 %}
+  <p class="text-justify"> None </p>
+  {% elif tp_plan|length > 0 %}
+  <blockquote class="blockquote">
+    <div class="bd-example">
+        <ul id="taskList" class="list-group">
+        {% for item in tp_plan -%}
+        <!-- <li contenteditable="true" id="{{item['step'] | safe}}">{{item["step"] | safe}}</li>   -->
+            <li class="input-group mb-2" data-level="{{item['data_level'] | safe}}" id="{{item['index'] | safe}}">
+                <!-- <div class="input-group mb-3"> -->
+                    <span class="input-group-text" id="p-{{item['index'] | safe}}">{{item["index"] | safe}}</span>
+                    <input type="text" class="form-control" value="{{item['step'] | safe}}"  style="background-color:#F5F5DC;" disabled>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    
+  </blockquote>
+  {% endif %}
+
+
+<!-- <h3><span class="badge rounded-pill bg-primary">Further Instruction:</span></h3>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+        Each <code>primary step (e.g., 1.) including all sub-steps (e.g., 1.x, 1.x.y)</code> will be used to generate one action to execute.<br>
+    </p>
+  </div>
+</div>
+<br> -->
+
+<!-- <form action="" method="post" class="form" role="form" id="theForm">
+  <div class="d-grid">
+    <input class="btn btn-success btn-block" id="submit_button" name="submit_button" value="Got it, let us move forward"  onclick="updateplan()" >
+    </div>
+</form> -->
+
+<form action="" method="post" class="form" role="form">
+    <div class="d-grid">
+      <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Got it, let us move forward.">
+    </div>
+</form>
+
+<!-- We may use js to listen here to check whether every question is answered. -->
+<!-- Link to the external JavaScript file -->
+<script  type="text/javascript">
+    function updateplan(){
+        document.getElementById('theForm').submit();
+    }
+
+    async function record_user_action(action = "proceed", action_input = {}) {
+        url = '/planning_agent/action_recording';
+        try {
+            // Start the POST request to send the message
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                // here the message does not matter
+                body: JSON.stringify({ 'action': action, 'action_input': action_input})
+            })
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+</script>
+{% endblock %}

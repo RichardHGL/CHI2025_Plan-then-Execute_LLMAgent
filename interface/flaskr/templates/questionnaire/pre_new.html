@@ -1,0 +1,254 @@
+{% extends 'bootstrap_base.html' %}
+<!-- {% from "_formhelpers.html" import render_field %} -->
+{% from 'bootstrap/form.html' import render_field %}
+{% from 'bootstrap/form.html' import render_form %}
+<!-- {{ render_form(form, button_style='success') }} -->
+
+{% block header %}
+  <!-- <h1>{% block title %}Pre-test Questionnaire{% endblock %}</h1> -->
+  <!-- <h1 class="text-center">Pre-test Questionnaire</h1> -->
+  <div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    <h1 class="card-title text-center">Pre-test Questionnaire</h1>
+    <h3 class="card-text text-justify">For following questions, you are answering on a Likert scale from 1 = not at all good to 6 = extremely good.</h3>
+  </div>
+</div>
+{% endblock %}
+
+{% block content %}
+
+<!-- We may use js to listen here to check whether every question is answered. -->
+
+<form method=post>
+
+<div class="form-group required"><label class="form-control-label" for="answer_1">How good are you at working with fractions?</label>
+<br>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_1-1" name="answer_1" type="radio" value="1">
+            <label class="form-check-label" for="answer_1-1">1</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_1-2" name="answer_1" type="radio" value="2">
+            <label class="form-check-label" for="answer_1-2">2</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_1-3" name="answer_1" type="radio" value="3">
+            <label class="form-check-label" for="answer_1-3">3</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_1-4" name="answer_1" type="radio" value="4">
+            <label class="form-check-label" for="answer_1-4">4</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_1-5" name="answer_1" type="radio" value="5">
+            <label class="form-check-label" for="answer_1-5">5</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_1-6" name="answer_1" type="radio" value="6">
+            <label class="form-check-label" for="answer_1-6">6</label>
+        </div>
+</div>
+
+<div class="form-group required"><label class="form-control-label" for="answer_2">How good are you at working with percentages?</label>
+<br>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_2-1" name="answer_2" type="radio" value="1">
+            <label class="form-check-label" for="answer_2-1">1</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_2-2" name="answer_2" type="radio" value="2">
+            <label class="form-check-label" for="answer_2-2">2</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_2-3" name="answer_2" type="radio" value="3">
+            <label class="form-check-label" for="answer_2-3">3</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_2-4" name="answer_2" type="radio" value="4">
+            <label class="form-check-label" for="answer_2-4">4</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_2-5" name="answer_2" type="radio" value="5">
+            <label class="form-check-label" for="answer_2-5">5</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_2-6" name="answer_2" type="radio" value="6">
+            <label class="form-check-label" for="answer_2-6">6</label>
+        </div>
+</div>
+
+
+<div class="form-group required"><label class="form-control-label" for="answer_3">How good are you at calculating a 15% tip?</label>
+<br>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_3-1" name="answer_3" type="radio" value="1">
+                    <label class="form-check-label" for="answer_3-1">1</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_3-2" name="answer_3" type="radio" value="2">
+                    <label class="form-check-label" for="answer_3-2">2</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_3-3" name="answer_3" type="radio" value="3">
+                    <label class="form-check-label" for="answer_3-3">3</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_3-4" name="answer_3" type="radio" value="4">
+                    <label class="form-check-label" for="answer_3-4">4</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_3-5" name="answer_3" type="radio" value="5">
+                    <label class="form-check-label" for="answer_3-5">5</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_3-6" name="answer_3" type="radio" value="6">
+                    <label class="form-check-label" for="answer_3-6">6</label>
+                </div>
+        </div>
+
+<div class="form-group required"><label class="form-control-label" for="answer_4">How good are you at figuring out how much a shirt will cost if it is 25% off?</label>
+<br>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_4-1" name="answer_4" type="radio" value="1">
+                    <label class="form-check-label" for="answer_4-1">1</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_4-2" name="answer_4" type="radio" value="2">
+                    <label class="form-check-label" for="answer_4-2">2</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_4-3" name="answer_4" type="radio" value="3">
+                    <label class="form-check-label" for="answer_4-3">3</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_4-4" name="answer_4" type="radio" value="4">
+                    <label class="form-check-label" for="answer_4-4">4</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_4-5" name="answer_4" type="radio" value="5">
+                    <label class="form-check-label" for="answer_4-5">5</label>
+                </div>
+            <div class="form-check form-check-inline">
+                    <input class="form-check-input" id="answer_4-6" name="answer_4" type="radio" value="6">
+                    <label class="form-check-label" for="answer_4-6">6</label>
+                </div>
+        </div>
+
+<div class="form-group required"><label class="form-control-label" for="answer_5">When reading the newspaper, how helpful do you find tables and graphs that are parts of a story? * (1 = not at all, 6 = extremely)</label>
+<br>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_5-1" name="answer_5" type="radio" value="1">
+            <label class="form-check-label" for="answer_5-1">1</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_5-2" name="answer_5" type="radio" value="2">
+            <label class="form-check-label" for="answer_5-2">2</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_5-3" name="answer_5" type="radio" value="3">
+            <label class="form-check-label" for="answer_5-3">3</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_5-4" name="answer_5" type="radio" value="4">
+            <label class="form-check-label" for="answer_5-4">4</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_5-5" name="answer_5" type="radio" value="5">
+            <label class="form-check-label" for="answer_5-5">5</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_5-6" name="answer_5" type="radio" value="6">
+            <label class="form-check-label" for="answer_5-6">6</label>
+        </div>
+</div>
+
+<div class="form-group required"><label class="form-control-label" for="answer_6">When people tell you the chance of something happening, do you prefer that they use words (&#34;it rarely happens&#34;) or numbers (&#34;there’s a 1% chance&#34;)? -&gt; (1 = always prefer words, 6 = always prefer numbers)</label>
+<br>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_6-1" name="answer_6" type="radio" value="1">
+            <label class="form-check-label" for="answer_6-1">1</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_6-2" name="answer_6" type="radio" value="2">
+            <label class="form-check-label" for="answer_6-2">2</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_6-3" name="answer_6" type="radio" value="3">
+            <label class="form-check-label" for="answer_6-3">3</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_6-4" name="answer_6" type="radio" value="4">
+            <label class="form-check-label" for="answer_6-4">4</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_6-5" name="answer_6" type="radio" value="5">
+            <label class="form-check-label" for="answer_6-5">5</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_6-6" name="answer_6" type="radio" value="6">
+            <label class="form-check-label" for="answer_6-6">6</label>
+        </div>
+</div>
+
+<div class="form-group required"><label class="form-control-label" for="answer_7">When you hear a weather forecast, do you prefer predictions using percentages (e.g., &#34;there will be a 20% chance of rain today&#34;) or predictions using only words (e.g., &#34;there is a small chance of rain today&#34;)? -&gt; (1 = always prefer percentages, 6 = always prefer words; reverse coded)</label>
+<br>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_7-1" name="answer_7" type="radio" value="1">
+            <label class="form-check-label" for="answer_7-1">1</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_7-2" name="answer_7" type="radio" value="2">
+            <label class="form-check-label" for="answer_7-2">2</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_7-3" name="answer_7" type="radio" value="3">
+            <label class="form-check-label" for="answer_7-3">3</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_7-4" name="answer_7" type="radio" value="4">
+            <label class="form-check-label" for="answer_7-4">4</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_7-5" name="answer_7" type="radio" value="5">
+            <label class="form-check-label" for="answer_7-5">5</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_7-6" name="answer_7" type="radio" value="6">
+            <label class="form-check-label" for="answer_7-6">6</label>
+        </div>
+</div>
+
+<div class="form-group required"><label class="form-control-label" for="answer_8">How often do you find numerical information to be useful? -&gt; (1 = never, 6 = very often)</label>
+<br>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_8-1" name="answer_8" type="radio" value="1">
+            <label class="form-check-label" for="answer_8-1">1</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_8-2" name="answer_8" type="radio" value="2">
+            <label class="form-check-label" for="answer_8-2">2</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_8-3" name="answer_8" type="radio" value="3">
+            <label class="form-check-label" for="answer_8-3">3</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_8-4" name="answer_8" type="radio" value="4">
+            <label class="form-check-label" for="answer_8-4">4</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_8-5" name="answer_8" type="radio" value="5">
+            <label class="form-check-label" for="answer_8-5">5</label>
+        </div>
+    <div class="form-check form-check-inline">
+            <input class="form-check-input" id="answer_8-6" name="answer_8" type="radio" value="6">
+            <label class="form-check-label" for="answer_8-6">6</label>
+        </div>
+</div>
+
+
+<!-- <p><input type=submit value=Submit button_style='success'> -->
+  <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Submit">
+</form>
+
+{% endblock %}

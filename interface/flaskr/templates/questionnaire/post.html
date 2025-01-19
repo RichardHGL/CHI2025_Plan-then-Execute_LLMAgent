@@ -1,0 +1,33 @@
+{% extends 'bootstrap_base.html' %}
+<!-- {% from "_formhelpers.html" import render_field %} -->
+{% from 'bootstrap/form.html' import render_field %}
+{% from 'bootstrap/form.html' import render_form %}
+<!-- {{ render_form(form, button_style='success') }} -->
+
+{% block header %}
+  <!-- <h1>{% block title %}Post-test Questionnaire{% endblock %}</h1> -->
+  <h1 class="text-center"> Post-test Questionnaire </h1>
+{% endblock %}
+
+{% block content %}
+{{render_form(form, button_style='success', button_size='block')}}
+<!-- <form method=post>
+  {{form.hidden_tag()}}
+  <dl>
+    {{ render_field(form.answer_1) }}
+    {{ render_field(form.answer_2) }}
+    {{ render_field(form.answer_3) }}
+    {{ render_field(form.answer_4) }}
+  </dl>
+  <p><input type=submit value=Submit>
+</form> -->
+
+  <!-- <form method="post">
+    <label for="username">question 1: 1 + 1 = </label>
+    <input type="password" name="password" id="password" required>
+    <input type="submit" value="Submit">
+  </form> -->
+
+<!-- We may use js to listen here to check whether every question is answered. -->
+
+{% endblock %}

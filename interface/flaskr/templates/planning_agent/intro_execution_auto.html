@@ -1,0 +1,111 @@
+{% extends 'bootstrap_base.html' %}
+{% from 'bootstrap5/form.html' import render_field %}
+
+{% block header %}
+<div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+    <h1 class="card-title text-center">Stage II: Execution</h1>
+    <h3 class="card-text text-justify">In the execution stage, the plan will be used to instruct large language models to choose actions to execute. In each step, you will see the assistant predicted action. After finishing the whole plan, you can continue to next task.</h3>
+  </div>
+</div>
+
+<style>
+
+    .bd-example {
+        padding: 0.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 0.5px;
+        border-top-left-radius: 0.25rem;
+        border-top-right-radius: 0.25rem;
+        background-color: bisque; /* set the background color to red */
+    }
+
+    .task-list {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .task-item {
+        margin-bottom: 5px;
+        display: flex;
+        align-items: center;
+    }
+
+    .task-item input[type="text"] {
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    .task-item button {
+        margin-right: 5px;
+    }
+
+    .add-btn {
+        margin-top: 10px;
+    }
+
+    /* Indentation based on data-level */
+    .task-item[data-level="2"] {
+        padding-left: 20px;
+    }
+
+    .task-item[data-level="3"] {
+        padding-left: 40px;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+
+<p>After you click button 'start'. The execution process will be presented in a conversation. We provide one screenshot of our conversational interface below to show you the options:</p>
+<h3><span class="badge rounded-pill bg-info">Action Prediction</span></h3>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+    The plan will be executed <code>step-by-step</code> with transforming each primary step into one action.
+    </p>
+    <p class="card-text">
+        However, the LLM assistants may also make errors. The potential cases for action prediction are:
+      <ul>
+        <li> <code><strong>Correct Action Prediction</strong></code>: The predicted action from LLM assistant is correct.
+        <li> <code><strong>Wrong Action Selection</strong></code>: The LLM Assistant select one action that does not align with current plan primary step.
+        <li> <code><strong>Wrong Action Parameters</strong></code>. The LLM Assistant selects the correct action but wrong parameters.
+        <li> <code>Special case</code>: When there is a warning message that 'LLM Assistant fail to predict one action'. This indicates that LLM Agent fails to provide a valid action to execute.</li>
+      </ul>
+    </p>
+  </div>
+</div>
+<br>
+<div align="center">
+    <img src="{{url_for('static', filename='images/Screenshot-execution-auto-1.png')}}"  class="figure-img img-fluid rounded" alt="Responsive image">
+</div>
+
+<h3><span class="badge rounded-pill bg-primary">Action Execution</span></h3>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+        <ul>
+        <li>After clicking 'Proceed', the predicted action will be executed and the execution result will be shown in the conversation.</li>
+        <li>After one action is executed, you can move forward with clicking button 'Next Step'. </li>
+        <li>After all steps are executed, the submit button will be displayed, and then you can move to next task.</li>
+        </ul>
+    </p>
+  </div>
+</div>
+<br>
+
+<div align="center">
+    <img src="{{url_for('static', filename='images/Screenshot-execution-auto-2.png')}}"  class="figure-img img-fluid rounded" alt="Responsive image">
+</div>
+
+<form action="" method="post" class="form" role="form">
+    <div class="d-grid">
+      <input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Got it, let us check the example.">
+    </div>
+</form>
+
+{% endblock %}
+

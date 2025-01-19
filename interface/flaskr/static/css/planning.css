@@ -1,0 +1,42 @@
+.bd-example {
+    padding: 0.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 0.5px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    background-color: bisque; /* set the background color to red */
+}
+
+.task-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.task-item {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.task-item input[type="text"] {
+    flex: 1;
+    margin-right: 5px;
+}
+
+.task-item button {
+    margin-right: 5px;
+}
+
+.add-btn {
+    margin-top: 10px;
+}
+
+/* Indentation based on data-level */
+.task-item[data-level="2"] {
+    padding-left: 20px;
+}
+
+.task-item[data-level="3"] {
+    padding-left: 40px;
+}

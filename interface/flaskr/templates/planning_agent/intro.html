@@ -1,0 +1,52 @@
+{% extends 'bootstrap_base.html' %}
+
+{% block header %}
+
+<div class="card text-white bg-primary mb-3">
+  <div class="card-body">
+      <h1 class="card-title text-center">Workflow Overview</h1>
+      <h3 class="card-text text-justify">Before working on the tasks, we will walk you through the workflow of interacting with the daily assistant. </h3>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block content %}
+
+<h3><span class="badge rounded-pill bg-info">Overview</span></h3>
+<div class="card">
+  <div class="card-body">
+    <p class="card-text">
+      <ul>
+        <li>An AI assistant powered by large language models will help you in these tasks with a <code>plan-then-execute</code> manner (i.e., they will first produce a step-wise plan to accomplish the given task, and then follow the plan <code>step-by-step</code> to complete the task).</li>
+        <!-- <li>They will first generate a plan, which will be executed <code>step-by-step</code>.</li> -->
+        <li><p style="word-break: break-all;">Each task consists of two stages:</p>
+            <ol> 
+                {% if (condition == 'AP-AE') or (condition == 'AP-UE') %}
+                <li> <p style="word-break: break-all;"><code><strong>Plan Generation</strong></code>. After the large language models-based assistant generates a plan for each task, you are asked to review the plan. After review the plan, you can give feedback -- whether the plan is correct to execute.</p> </li>
+                {% else %}
+                <li> <p style="word-break: break-all;"><code><strong>Plan Generation</strong></code>. After the large language models-based assistant generates a plan for each task, you are asked to review the plan and make necessary edits to the plan.</p> </li>
+                {% endif %}
+                {% if (condition == 'AP-AE') or (condition == 'UP-AE') %}
+                <!-- <li> <p style="word-break: break-all;"><code><strong>Plan Execution</strong></code>. After the large language models-based assistant generates a plan for each task, large language models (LLMs) will use different toolkits / digital API to show you results. Your task is to check the execution process and give feedback -- whether the execution process can provide an expected outcome to the task.</li></p> -->
+                <li> <p style="word-break: break-all;"><code><strong>Plan Execution</strong></code>. After you confirm the plan, the AI assistant will execute the steps using different LLMs and present you with results. Your task is to observe the execution process. After the execution is done, please provide feedback on whether the execution process provided an expected outcome on the task.</li></p>
+                {% else %}
+                <!-- <li> <p style="word-break: break-all;"><code><strong>Plan Execution</strong></code>. After the large language models-based assistant generates a plan for each task, large language models (LLMs) will use different toolkits / digital API to show you results. Your task is to involve in this process and check the usage of API (i.e., LLM action) is correct before execution. After the execution is done, please give feedback -- whether the execution process can provide an expected outcome to the task.</li></p> -->
+                <li> <p style="word-break: break-all;"><code><strong>Plan Execution</strong></code>. After you confirm the plan, the AI assistant will execute the steps using different LLMs and present you with results. Your task is to closely monitor this process and check the different LLM actions to ensure they are correct before their execution. After the execution is done, please provide feedback on whether the execution process provided an expected outcome on the task.</li></p>
+                {% endif %}
+            </ol>
+        </li>
+        <li>Along with the execution of the plan, please indicate your confidence on the process and final outcome of LLM assistant.</li>
+      </ul>
+    </p>
+  </div>
+</div>
+<br>
+
+<form method="post">
+  <div class="d-grid"><input class="btn btn-success btn-block" id="submit_button" name="submit_button" type="submit" value="Got it, let's move forward to tutorial of planning!"></div>
+</form>
+
+<!-- We may use js to listen here to check whether every question is answered. -->
+
+{% endblock %}

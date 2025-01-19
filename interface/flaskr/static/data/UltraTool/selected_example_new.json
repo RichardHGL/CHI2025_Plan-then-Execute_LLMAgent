@@ -1,0 +1,2187 @@
+[
+    {
+        "question": "Can you help me log into my two different platform accounts and then check their account balances? The first account ID is 12345678, password is Password123; the second account ID is 87654321, password is 123Password.\n",
+        "plan": [
+            {
+                "step": "1. Log into the first account",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Get login information for the account (Account ID: 12345678, Account Password: Password123)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Log into the account",
+                "tool": "account_login(account_id=12345678, password='Password123')"
+            },
+            {
+                "step": "1.3 Confirm whether the first account is successfully logged in",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Check the first account balance",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Get account balance inquiry information (Account ID: 12345678)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2 Inquire about account balance",
+                "tool": "account_balance_query(account_id=12345678)"
+            },
+            {
+                "step": "2.3 Get the first account balance information (Account Balance: First account balance information)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3. Log into the second account",
+                "tool": "null"
+            },
+            {
+                "step": "3.1 Get login information for the account (Account ID: 87654321, Account Password: 123Password)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.2 Log into the account",
+                "tool": "account_login(account_id=87654321, password='123Password')"
+            },
+            {
+                "step": "3.3 Confirm whether the second account is successfully logged in",
+                "tool": "No tool required"
+            },
+            {
+                "step": "4. Check the second account balance",
+                "tool": "null"
+            },
+            {
+                "step": "4.1 Get account balance inquiry information (Account ID: 87654321)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "4.2 Inquire about account balance",
+                "tool": "account_balance_query(account_id=87654321)"
+            },
+            {
+                "step": "4.3 Get the second account balance information (Account Balance: Second account balance information)",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "account_login",
+                "description": "Account Login Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "description": "Account ID",
+                            "type": "integer"
+                        },
+                        "verification_code": {
+                            "description": "Verification Code",
+                            "type": "string"
+                        },
+                        "username": {
+                            "description": "Username",
+                            "type": "string"
+                        },
+                        "password": {
+                            "description": "User Password",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "login_status": {
+                            "description": "Login Status",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "account_balance_query",
+                "description": "Account Balance Retrieval Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "type": "integer",
+                            "description": "Account ID"
+                        },
+                        "date": {
+                            "type": "string",
+                            "description": "Date for querying balance"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "balance_info": {
+                            "description": "Account Balance Information",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Finance",
+        "id": "test-113"
+    },
+    {
+        "question": "My account ID is 54321, and the password is PWD2023. I plan to make two foreign exchange transactions. The first is to buy 10,000 euros, and the second is to sell 5,000 US dollars. Please help me operate.\n",
+        "plan": [
+            {
+                "step": "1. Log in to user account",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Obtain account login information (Account ID: 54321, Account Password: PWD2023)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Log in to the account",
+                "tool": "account_login(account_id='54321', password='PWD2023')"
+            },
+            {
+                "step": "1.3 Confirm successful login",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Conduct foreign exchange transactions",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Buy euros",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.1.1 Obtain information for buying euros (Currency Type: EUR, Purchase Amount: 10000)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.1.2 Buy the specified amount of euros",
+                "tool": "foreign_currency_purchase(currency_type='EUR', buy_amount=10000)"
+            },
+            {
+                "step": "2.1.3 Confirm successful euro purchase",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2 Sell US dollars",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2.1 Obtain information for selling US dollars (Currency Type: USD, Sell Amount: 5000)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2.2 Check the US dollar holdings",
+                "tool": "foreign_currency_query(currency_type='USD')"
+            },
+            {
+                "step": "2.2.3 Obtain US dollar holdings information (Foreign Exchange Holdings Information: Obtained US dollar holdings information)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2.4 Sell the specified amount of US dollars",
+                "tool": "foreign_currency_sale(currency_type='USD', sell_amount=-5000)"
+            },
+            {
+                "step": "2.2.5 Confirm successful US dollar sale",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "account_login",
+                "description": "Account Login Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "description": "Account ID",
+                            "type": "integer"
+                        },
+                        "verification_code": {
+                            "description": "Verification Code",
+                            "type": "string"
+                        },
+                        "username": {
+                            "description": "Username",
+                            "type": "string"
+                        },
+                        "password": {
+                            "description": "User Password",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "login_status": {
+                            "description": "Login Status",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "foreign_currency_purchase",
+                "description": "Foreign Exchange Purchase Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "currency_type": {
+                            "description": "Currency Type",
+                            "type": "string"
+                        },
+                        "buy_price": {
+                            "description": "Purchase Price, if not provided then the current latest price",
+                            "type": "number"
+                        },
+                        "exchange_rate": {
+                            "description": "Exchange Rate at the time of purchase",
+                            "type": "number"
+                        },
+                        "buy_amount": {
+                            "description": "Amount of Money to Purchase",
+                            "type": "integer"
+                        },
+                        "account_balance": {
+                            "description": "Account Balance",
+                            "type": "number"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "purchased_info": {
+                            "description": "Information on whether the purchase was successful",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "foreign_currency_query",
+                "description": "Query the amount of specific foreign currency held in the account",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "currency_type": {
+                            "description": "Currency type",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "foreign_currency_info": {
+                            "description": "Current foreign currency holding information",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "foreign_currency_sale",
+                "description": "Foreign Exchange Selling Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "currency_type": {
+                            "description": "Currency Type",
+                            "type": "string"
+                        },
+                        "sell_price": {
+                            "description": "Selling Price, if not provided, the latest price will be used",
+                            "type": "number"
+                        },
+                        "sell_amount": {
+                            "description": "Amount of Money to Sell",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "sale_info": {
+                            "description": "Information on whether the sale was successful",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Finance",
+        "id": "test-149"
+    },
+    {
+        "question": "I need to know the detailed information about the 'Happy Savings High Gold' deposit product, including its minimum deposit amount, annual interest rate, and deposit term. Also, I want to use my account number 123456 and password 789123 along with the most recently received verification code 8888 to apply for a loan, and I would like to know the review time for this loan application as well as how to check the status of all my current loan applications.",
+        "plan": [
+            {
+                "step": "1. Obtain deposit product information",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Obtain deposit product name (Product Name: Happy Savings High Gold)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Query detailed information of deposit product",
+                "tool": "deposit_product_selection(product_name='Happy Savings High Gold')"
+            },
+            {
+                "step": "1.3 Record deposit product information (Minimum deposit amount: Minimum deposit amount, Annual interest rate: Annual interest rate, Deposit term: Deposit term)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Apply for a loan",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Obtain user login information (Account: 123456, Password: 789123, Verification code: 8888)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2 Submit loan application",
+                "tool": "loan_application(account='123456', password='789123', captcha='8888')"
+            },
+            {
+                "step": "2.3 Obtain loan review time",
+                "tool": "loan_application_time(account='123456', password='789123', captcha='8888')"
+            },
+            {
+                "step": "2.4 Record loan review time (Review time: Loan review time)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3. Check loan application status",
+                "tool": "null"
+            },
+            {
+                "step": "3.1 Use the obtained user login information (Account: 123456, Password: 789123, Verification code: 8888)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.2 Query loan application status",
+                "tool": "detailed_inquiry(identity='123456', password='789123', verification_code='8888')"
+            },
+            {
+                "step": "3.3 Record loan application status (Loan application status: Loan application status)",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "deposit_product_selection",
+                "description": "Deposit Product Selection Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "product_name": {
+                            "description": "Name of the deposit product",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "product_details": {
+                            "description": "Detailed information of the deposit product",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "loan_application",
+                "description": "Online Banking Loan Application Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "account": {
+                            "description": "Card (Account) Number/Mobile Number/Username",
+                            "type": "string"
+                        },
+                        "password": {
+                            "description": "Account Password",
+                            "type": "string"
+                        },
+                        "captcha": {
+                            "description": "Verification Code",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "application_status": {
+                            "description": "Loan Application Status",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "loan_application_time",
+                "description": "Retrieve the audit time of loan application",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "account": {
+                            "type": "string",
+                            "description": "Card (account) number/mobile number/username"
+                        },
+                        "password": {
+                            "type": "string",
+                            "description": "Account password"
+                        },
+                        "captcha": {
+                            "type": "string",
+                            "description": "Verification code"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "application_time": {
+                            "type": "string",
+                            "description": "Audit time of the loan application"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "detailed_inquiry",
+                "description": "Business Inquiry - Detailed Inquiry Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "identity": {
+                            "description": "Card (Account) Number/Phone Number/Username",
+                            "type": "string"
+                        },
+                        "password": {
+                            "description": "Account Password",
+                            "type": "string"
+                        },
+                        "verification_code": {
+                            "description": "Verification Code",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "detailed_info": {
+                            "description": "Business Detailed Information",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Finance",
+        "id": "test-184"
+    },
+    {
+        "question": "Please inquire about the current debt amount of my credit card with the last five digits 12345, and deduct the corresponding 12000 RMB from my savings card number 6212345678900011 to repay this debt, then help me check the amount of the outstanding bill for the same credit card within 30 days after today.",
+        "plan": [
+            {
+                "step": "1. Inquire about the credit card debt amount",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Obtain credit card information (Account ID: Account ID, Account Password: Account Password, Credit Card: Last five digits 12345, Verification Code: Verification Code)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Log in to the banking service platform",
+                "tool": "account_login(account_id='Account ID', password='Account Password', verification_code='Verification Code')"
+            },
+            {
+                "step": "1.3 Inquire about the current credit card debt amount",
+                "tool": "credit_card_debt(credit_card_number='Last five digits 12345')"
+            },
+            {
+                "step": "1.4 Confirm the debt amount inquiry is successful and obtain the amount (Debt Amount: Inquired Debt Amount)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Deduct funds to repay the credit card debt",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Obtain savings card information (Savings Card Number: 6212345678900011)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2 Transfer from savings card to credit card",
+                "tool": "credit_card_repayment(overdraft_card_number='Last five digits 12345', repayment_amount='12000', payment_card_number='6212345678900011', currency='RMB')"
+            },
+            {
+                "step": "2.3 Confirm the transfer is successful",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3. Check the credit card's future outstanding bills",
+                "tool": "null"
+            },
+            {
+                "step": "3.1 Obtain date information (Date Range: Within 30 days after today)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.2 Inquire about the credit card's outstanding bill amount within the specified date range",
+                "tool": "credit_card_debt(credit_card_number='Last five digits 12345', date_range='Within 30 days after today')"
+            },
+            {
+                "step": "3.3 Confirm the future outstanding bill amount inquiry is successful and obtain the amount (Outstanding Bill Amount: Inquired Outstanding Bill Amount)",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "account_login",
+                "description": "Account Login Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "account_id": {
+                            "description": "Account ID",
+                            "type": "integer"
+                        },
+                        "verification_code": {
+                            "description": "Verification Code",
+                            "type": "string"
+                        },
+                        "username": {
+                            "description": "Username",
+                            "type": "string"
+                        },
+                        "password": {
+                            "description": "User Password",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "login_status": {
+                            "description": "Login Status",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "credit_card_debt",
+                "description": "Query credit card debt amount",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "credit_card_number": {
+                            "description": "Credit card number",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "Currency",
+                            "type": "string",
+                            "default": "CNY"
+                        },
+                        "account_id": {
+                            "type": "integer",
+                            "description": "Credit card account ID"
+                        },
+                        "card_last_digits": {
+                            "type": "string",
+                            "description": "Last digits of credit card"
+                        },
+                        "date_range": {
+                            "type": "string",
+                            "description": "Date range for the query"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "debt": {
+                            "description": "Current credit card debt amount",
+                            "type": "number"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "credit_card_repayment",
+                "description": "Credit Card Repayment",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "overdraft_card_number": {
+                            "description": "Overdraft Card Number",
+                            "type": "string"
+                        },
+                        "repayment_amount": {
+                            "description": "Repayment Amount",
+                            "type": "number"
+                        },
+                        "payment_card_number": {
+                            "description": "Payment Card Number",
+                            "type": "string"
+                        },
+                        "currency": {
+                            "description": "Currency",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "confirmation": {
+                            "description": "Repayment Confirmation Information",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Finance",
+        "id": "test-200"
+    },
+    {
+        "question": "Please check the latest status of my two orders with the numbers 123456789 and 987654321, and confirm whether they are both associated with my customer ID A123456.",
+        "plan": [
+            {
+                "step": "1. Check order status",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Obtain order number information (Order number 1: 123456789, Order number 2: 987654321)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Retrieve the status of order number 123456789",
+                "tool": "order_tracking(orderNumber='123456789')"
+            },
+            {
+                "step": "1.3 Obtain the status of order 123456789 (Order status: Order 123456789 status)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.4 Retrieve the status of order number 987654321",
+                "tool": "order_tracking(orderNumber='987654321')"
+            },
+            {
+                "step": "1.5 Obtain the status of order 987654321 (Order status: Order 987654321 status)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.6 Confirm successful retrieval of order status",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Confirm order association with customer ID",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Obtain customer ID information (Customer ID: A123456)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2 Check whether order number 123456789 is associated with customer ID A123456",
+                "tool": "order_tracking(orderNumber='123456789', customerID='A123456')"
+            },
+            {
+                "step": "2.3 Check whether order number 987654321 is associated with customer ID A123456",
+                "tool": "order_tracking(orderNumber='987654321', customerID='A123456')"
+            },
+            {
+                "step": "2.4 Confirm successful verification of order association",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "order_tracking",
+                "description": "Order Tracking Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "orderNumber": {
+                            "description": "Order Number",
+                            "type": "string"
+                        },
+                        "customerID": {
+                            "description": "Customer ID",
+                            "type": "string"
+                        },
+                        "orderDate": {
+                            "description": "Order Date",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "orderStatus": {
+                            "description": "Order Status",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Tracking",
+        "id": "test-256"
+    },
+    {
+        "question": "Please order a Spicy Hot Pot for me at the restaurant, add two extra servings of beef and a plate of hand-torn cabbage, then place the order using my table ID 10, and help me check out.",
+        "plan": [
+            {
+                "step": "1. Obtain restaurant and table information",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Confirm the restaurant name and contact information (Restaurant Name: Restaurant Name, Contact Information: Restaurant Contact Information)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Obtain table ID (Table ID: 10)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Order Spicy Hot Pot",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Obtain Spicy Hot Pot ID",
+                "tool": "get_dish_id(dish_name='Spicy Hot Pot')"
+            },
+            {
+                "step": "2.2 Select Spicy Hot Pot (Dish ID: <Spicy Hot Pot ID>, Quantity: '1')",
+                "tool": "menu_select_api(dish_id=<Spicy Hot Pot ID>, quantity='1')"
+            },
+            {
+                "step": "2.3 Obtain order ID (Order ID: Order Number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3. Add extra ingredients",
+                "tool": "null"
+            },
+            {
+                "step": "3.1 Obtain beef ID",
+                "tool": "get_dish_id(dish_name='Beef')"
+            },
+            {
+                "step": "3.2 Add beef (Dish ID: <Beef ID>, Quantity: '2')",
+                "tool": "menu_select_api(dish_id=<Beef ID>, quantity='2')"
+            },
+            {
+                "step": "3.3 Obtain hand-torn cabbage ID",
+                "tool": "get_dish_id(dish_name='Hand-torn Cabbage')"
+            },
+            {
+                "step": "3.4 Add hand-torn cabbage (Dish ID: <Hand-torn Cabbage ID>, Quantity: '1')",
+                "tool": "menu_select_api(dish_id=<Hand-torn Cabbage ID>, quantity='1')"
+            },
+            {
+                "step": "3.5 Obtain updated order ID (Order ID: Updated Order Number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "4. Use table ID to place order and check out",
+                "tool": "null"
+            },
+            {
+                "step": "4.1 Place order using table ID (Order ID: Updated Order Number, Table ID: '10')",
+                "tool": "place_order(order_id=<Updated Order Number>, table_id='10')"
+            },
+            {
+                "step": "4.2 Confirm successful order placement and obtain total order amount (Total Order Amount: Order Amount)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "4.3 Provide payment information (Payment Information: User Payment Information)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "4.4 Complete payment operation (Order ID: Updated Order Number, Payment Amount: Order Amount)",
+                "tool": "checkout_api(order_id=<Updated Order Number>, amount=<Order Amount>)"
+            }
+        ],
+        "tools": [
+            {
+                "name": "get_dish_id",
+                "description": "Get the dish ID based on the dish name",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "dish_name": {
+                            "type": "string",
+                            "description": "Dish name"
+                        },
+                        "menu": {
+                            "type": "array",
+                            "description": "Restaurant menu"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "dish_id": {
+                            "type": "integer",
+                            "description": "Queried dish ID"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "menu_select_api",
+                "description": "Ordering API for selecting dishes",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "dish_id": {
+                            "description": "Dish ID",
+                            "type": "integer"
+                        },
+                        "quantity": {
+                            "description": "Quantity of dishes",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "order_id": {
+                            "description": "Generated order ID for subsequent ordering and checkout operations",
+                            "type": "integer"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "place_order",
+                "description": "Place an order based on dish information and table number",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "dishes": {
+                            "type": "array",
+                            "description": "List of dishes, each dish includes dish ID and quantity"
+                        },
+                        "table_id": {
+                            "type": "integer",
+                            "description": "Table number"
+                        },
+                        "order_id": {
+                            "type": "integer",
+                            "description": "Order number"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "order_id": {
+                            "type": "integer",
+                            "description": "Generated order ID"
+                        },
+                        "confirmation": {
+                            "description": "Order confirmation message",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "checkout_api",
+                "description": "Checkout API, dependent on the result of the previous Place Order API 'Order ID'",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "order_id": {
+                            "description": "Order ID",
+                            "type": "integer"
+                        },
+                        "amount": {
+                            "description": "Payment Amount",
+                            "type": "integer"
+                        },
+                        "payment_method": {
+                            "description": "Payment Method",
+                            "type": "integer"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "total_bill": {
+                            "description": "Total Bill Amount",
+                            "type": "integer"
+                        },
+                        "payment_status": {
+                            "description": "Payment Status",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Restaurant",
+        "id": "test-271"
+    },
+    {
+        "question": "I need to set an alarm for every weekday morning at 7:30, and then cancel the alarm for Thursday, changing it to 8:00 in the evening.\n",
+        "plan": [
+            {
+                "step": "1. Set the alarm for every day",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Get the alarm setting information (Time: 07:30 AM, Frequency: Monday to Friday)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Set the alarm",
+                "tool": "clock_alarm_set(time='07:30', frequency='Monday to Friday')"
+            },
+            {
+                "step": "1.3 Confirm whether the alarm is set successfully",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Cancel the Thursday alarm",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Get the information of the alarm to be cancelled (Time: 07:30 AM, Frequency: Thursday)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2 Cancel the alarm",
+                "tool": "clock_alarm_cancel(time='07:30', frequency='Thursday')"
+            },
+            {
+                "step": "2.3 Confirm whether the alarm is cancelled successfully",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3. Set the new alarm time",
+                "tool": "null"
+            },
+            {
+                "step": "3.1 Get the information of the alarm to be adjusted (New Time: 08:00 PM, Frequency: Thursday)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.2 Set the new alarm",
+                "tool": "clock_alarm_set(time='20:00', frequency='Thursday')"
+            },
+            {
+                "step": "3.3 Confirm whether the new alarm is set successfully",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "clock_alarm_set",
+                "description": "Set Alarm Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "time": {
+                            "description": "Alarm Set Time",
+                            "type": "string"
+                        },
+                        "date": {
+                            "description": "Alarm Set Date",
+                            "type": "string"
+                        },
+                        "label": {
+                            "description": "Alarm Label",
+                            "type": "string"
+                        },
+                        "frequency": {
+                            "description": "Alarm Set Frequency, options: Once, Daily, Monday to Sunday, default is Once",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "clock_alarm_info": {
+                            "description": "Alarm Setting Result",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "clock_alarm_cancel",
+                "description": "Cancel alarm tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "time": {
+                            "description": "The time of the alarm to be canceled",
+                            "type": "string"
+                        },
+                        "date": {
+                            "description": "The date of the alarm to be canceled",
+                            "type": "string"
+                        },
+                        "label": {
+                            "description": "The label of the alarm to be canceled",
+                            "type": "string"
+                        },
+                        "frequency": {
+                            "description": "The frequency of the alarm to be canceled",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "clock_alarm_info": {
+                            "description": "Alarm cancellation result",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Alarm",
+        "id": "test-388"
+    },
+    {
+        "question": "I have an important meeting to attend next Wednesday, and I need to book a flight ticket from Shenzhen to Beijing for tomorrow, it must be a morning flight, and then return from Beijing to Shenzhen tomorrow night, please handle it for me.\n",
+        "plan": [
+            {
+                "step": "1. Obtain user information",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Obtain basic user information (Name: User Name, ID Number: User ID Number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Confirm user's city (City: Shenzhen)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Book outbound flight ticket",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Obtain outbound flight search information (Departure City: Shenzhen, Arrival City: Beijing, Departure Date: Tomorrow's Date, Departure Time Slot: Morning)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.2 Search for outbound flights",
+                "tool": "flight_search(departure_city='Shenzhen', arrival_city='Beijing', departure_date='Tomorrow's Date', timePeriod='Morning')"
+            },
+            {
+                "step": "2.3 Select a suitable outbound flight (Flight Number: Selected Flight Number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.4 Obtain outbound passenger information (Name: User Name, ID Number: User ID Number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.5 Book outbound flight ticket",
+                "tool": "book_flight(departure_city='Shenzhen',destination_city='Beijing', flight_number='Selected Flight Number', departure_date='Tomorrow's Date', departure_time='Morning', passenger_name='User Name', passenger_id='User ID Number')"
+            },
+            {
+                "step": "2.6 Confirm whether the outbound flight ticket is successfully booked",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3. Book return flight ticket",
+                "tool": "null"
+            },
+            {
+                "step": "3.1 Obtain return flight search information (Departure City: Beijing, Arrival City: Shenzhen, Departure Date: Tomorrow's Date, Departure Time Slot: Evening)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.2 Search for return flights",
+                "tool": "flight_search(departure_city='Beijing', arrival_city='Shenzhen', departure_date='Tomorrow's Date', timePeriod='Evening')"
+            },
+            {
+                "step": "3.3 Select a suitable return flight (Flight Number: Selected Flight Number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.4 Obtain return passenger information (Name: User Name, ID Number: User ID Number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.5 Book return flight ticket",
+                "tool": "book_flight(departure_city='Beijing',destination_city='Shenzhen',flight_number='Selected Flight Number', departure_date='Tomorrow's Date', departure_time='Evening', passenger_name='User Name', passenger_id='User ID Number')"
+            },
+            {
+                "step": "3.6 Confirm whether the return flight ticket is successfully booked",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "flight_search",
+                "description": "Flight Ticket Search Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "departure_date": {
+                            "type": "string",
+                            "description": "Departure Date"
+                        },
+                        "return_date": {
+                            "type": "string",
+                            "description": "Return Date"
+                        },
+                        "destination": {
+                            "type": "string",
+                            "description": "Destination"
+                        },
+                        "departure_city": {
+                            "type": "string",
+                            "description": "Departure City"
+                        },
+                        "arrival_city": {
+                            "type": "string",
+                            "description": "Arrival City"
+                        },
+                        "departure_time": {
+                            "type": "string",
+                            "description": "Earliest Departure Time"
+                        },
+                        "directFlight": {
+                            "type": "boolean",
+                            "description": "Direct Flight"
+                        },
+                        "flightNumber": {
+                            "type": "string",
+                            "description": "Flight Number"
+                        },
+                        "priceLimit": {
+                            "type": "string",
+                            "description": "Price Limit"
+                        },
+                        "bookingName": {
+                            "type": "string",
+                            "description": "Booking Name"
+                        },
+                        "cabinClass": {
+                            "type": "string",
+                            "description": "Cabin Class"
+                        },
+                        "timePeriod": {
+                            "type": "string",
+                            "description": "Time Period, e.g., 'morning'"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "flight_options": {
+                            "type": "array",
+                            "description": "List of Available Flight Options",
+                            "items": {
+                                "type": "object"
+                            }
+                        },
+                        "selected_flight_price": {
+                            "type": "integer",
+                            "description": "Price of the Selected Flight"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "book_flight",
+                "description": "Flight booking tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "ticket_info": {
+                            "description": "Flight information, including flight number, date, time, departure place, and destination",
+                            "type": "string"
+                        },
+                        "passenger_info": {
+                            "description": "Passenger information, including name and ID number",
+                            "type": "string"
+                        },
+                        "payment_info": {
+                            "description": "Payment information, including payment method and amount",
+                            "type": "string"
+                        },
+                        "departure_date": {
+                            "type": "string",
+                            "description": "Departure date"
+                        },
+                        "departure_city": {
+                            "type": "string",
+                            "description": "Departure city"
+                        },
+                        "departure_time": {
+                            "type": "string",
+                            "description": "Departure time"
+                        },
+                        "destination_city": {
+                            "type": "string",
+                            "description": "Destination city"
+                        },
+                        "flight_number": {
+                            "type": "string",
+                            "description": "Flight number"
+                        },
+                        "airline": {
+                            "type": "string",
+                            "description": "Airline"
+                        },
+                        "price": {
+                            "type": "number",
+                            "description": "Ticket price"
+                        },
+                        "seat_preference": {
+                            "type": "string",
+                            "description": "Seat preference"
+                        },
+                        "seat_class": {
+                            "type": "string",
+                            "description": "Seat class"
+                        },
+                        "passenger_name": {
+                            "type": "string",
+                            "description": "Passenger name"
+                        },
+                        "passenger_id": {
+                            "type": "string",
+                            "description": "Passenger ID number"
+                        },
+                        "flight": {
+                            "type": "object",
+                            "description": "Selected flight"
+                        },
+                        "group_size": {
+                            "type": "integer",
+                            "description": "Group size for travel"
+                        },
+                        "amenities": {
+                            "type": "array",
+                            "description": "List of required amenities",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "flight_details": {
+                            "type": "string",
+                            "description": "Flight details"
+                        },
+                        "number_of_passengers": {
+                            "type": "integer",
+                            "description": "Number of passengers"
+                        },
+                        "passenger_details": {
+                            "type": "string",
+                            "description": "Passenger details"
+                        },
+                        "window_seat": {
+                            "type": "boolean",
+                            "description": "Whether a window seat is required"
+                        },
+                        "mealService": {
+                            "description": "Whether meal service is provided",
+                            "type": "boolean"
+                        },
+                        "mealPreference": {
+                            "description": "Meal preference",
+                            "type": "string"
+                        },
+                        "contactInfo": {
+                            "description": "User contact information",
+                            "type": "string"
+                        },
+                        "options": {
+                            "type": "object",
+                            "properties": {
+                                "cancellation": {
+                                    "type": "boolean",
+                                    "description": "Whether a free cancellation option is needed"
+                                },
+                                "change": {
+                                    "type": "boolean",
+                                    "description": "Whether a free change option is needed"
+                                }
+                            },
+                            "required": [
+                                "cancellation",
+                                "change"
+                            ]
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "booking_status": {
+                            "description": "Booking status",
+                            "type": "string"
+                        },
+                        "booking_details": {
+                            "type": "string",
+                            "description": "Booking details"
+                        },
+                        "e_ticket": {
+                            "type": "string",
+                            "description": "E-ticket information"
+                        },
+                        "booking_reference": {
+                            "type": "string",
+                            "description": "Booking reference information"
+                        },
+                        "ticket_price": {
+                            "type": "number",
+                            "description": "Ticket price"
+                        },
+                        "booking_confirmation": {
+                            "type": "object",
+                            "description": "Booking confirmation information, including booking status and ticket details"
+                        },
+                        "flight_details": {
+                            "type": "object",
+                            "description": "Flight details"
+                        },
+                        "ticket_info": {
+                            "description": "Booked ticket information",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Flight",
+        "id": "test-497"
+    },
+    {
+        "question": "Please plan a trip for me departing on October 1st at 8:00 AM to Japan, returning on October 7th at 11:00 PM, including Tokyo Disneyland, Senso-ji Temple, Ginza, Mount Fuji, Kyoto cultural experience, Universal Studios Osaka, and visiting the Nara Deer Park on October 4th, and help me find hotels where the nightly cost does not exceed 10,000 Japanese yen.",
+        "plan": [
+            {
+                "step": "1. Obtain personal information and travel preferences",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Obtain user information (Name: User's name, ID number: User's ID number, Passport information: User's passport information)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Obtain travel dates (Departure date: 2023-10-01 08:00, Return date: 2023-10-07 23:00)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.3 Obtain travel destination (Destination: Japan)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.4 Obtain travel budget (Accommodation budget: Not exceeding 10,000 yen per night)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Use travel planning tool to create itinerary",
+                "tool": "travel_itinerary_planner(destination='Japan', departure_date='2023-10-01 08:00', return_date='2023-10-07 23:00', interests=['Tokyo Disneyland', 'Senso-ji Temple', 'Ginza', 'Mount Fuji', 'Kyoto cultural experience', 'Universal Studios Osaka', 'Nara Deer Park'])"
+            },
+            {
+                "step": "3. Confirm and obtain the travel plan",
+                "tool": "null"
+            },
+            {
+                "step": "4. Book hotels",
+                "tool": "null"
+            },
+            {
+                "step": "4.1 Search for hotels within budget",
+                "tool": "hotel_search(city='Japan', budget=10000, check_in_date='2023-10-01', check_out_date='2023-10-07')"
+            },
+            {
+                "step": "4.2 Confirm hotel booking information (Selected hotel information: Selected hotel information)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "4.3 Complete hotel booking payment",
+                "tool": "hotel_booking(hotel_id=<Selected hotel information>, personal_info='User information')"
+            },
+            {
+                "step": "5. Arrange transportation",
+                "tool": "null"
+            },
+            {
+                "step": "5.1 Arrange transportation within Tokyo",
+                "tool": "transportation_booking(departure_city='Tokyo', departure_date=<Tokyo transportation date>)"
+            },
+            {
+                "step": "5.2 Arrange transportation from Tokyo to Mount Fuji",
+                "tool": "transportation_booking(departure_city='Tokyo', destination_city='Mount Fuji', departure_date=<Tokyo to Mount Fuji transportation date>)"
+            },
+            {
+                "step": "5.3 Arrange transportation from Tokyo to Kyoto",
+                "tool": "transportation_booking(departure_city='Tokyo', destination_city='Kyoto', departure_date=<Tokyo to Kyoto transportation date>)"
+            },
+            {
+                "step": "5.4 Arrange transportation from Kyoto to Osaka",
+                "tool": "transportation_booking(departure_city='Kyoto', destination_city='Osaka', departure_date=<Kyoto to Osaka transportation date>)"
+            },
+            {
+                "step": "5.5 Arrange transportation from Osaka to Nara",
+                "tool": "transportation_booking(departure_city='Osaka', destination_city='Nara', departure_date=<Osaka to Nara transportation date>)"
+            },
+            {
+                "step": "5.6 Arrange transportation from Nara back to Tokyo",
+                "tool": "transportation_booking(departure_city='Nara', destination_city='Tokyo', departure_date=<Nara to Tokyo transportation date>)"
+            },
+            {
+                "step": "6. Book event tickets",
+                "tool": "null"
+            },
+            {
+                "step": "6.1 Book Tokyo Disneyland tickets",
+                "tool": "book_ticket(event='Tokyo Disneyland', visit_dates=<Tokyo Disneyland visit date>)"
+            },
+            {
+                "step": "6.2 Book Universal Studios Osaka tickets",
+                "tool": "book_ticket(event='Universal Studios Osaka', visit_dates=<Universal Studios Osaka visit date>)"
+            },
+            {
+                "step": "7. Organize the itinerary",
+                "tool": "null"
+            },
+            {
+                "step": "7.1 Compile flight, hotel, transportation, and event ticket information",
+                "tool": "No tool required"
+            },
+            {
+                "step": "7.2 Create a detailed schedule",
+                "tool": "No tool required"
+            },
+            {
+                "step": "7.3 Provide the itinerary to the user",
+                "tool": "No tool required"
+            }
+        ],
+        "tools": [
+            {
+                "name": "travel_itinerary_planner",
+                "description": "Travel Itinerary Planning Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "destination": {
+                            "description": "Destination",
+                            "type": "string"
+                        },
+                        "departure_date": {
+                            "description": "Departure Date",
+                            "type": "string"
+                        },
+                        "return_date": {
+                            "description": "Return Date",
+                            "type": "string"
+                        },
+                        "interests": {
+                            "description": "Points of Interest",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "itinerary": {
+                            "description": "Travel Itinerary",
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "day": {
+                                        "description": "Date",
+                                        "type": "string"
+                                    },
+                                    "activities": {
+                                        "description": "Activities",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "name": "hotel_search",
+                "description": "Search for hotels that meet the criteria and return a list",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "location": {
+                            "type": "string",
+                            "description": "Hotel location"
+                        },
+                        "check_in_date": {
+                            "type": "string",
+                            "description": "Check-in date"
+                        },
+                        "check_out_date": {
+                            "type": "string",
+                            "description": "Check-out date"
+                        },
+                        "guests": {
+                            "description": "Number of guests",
+                            "type": "integer"
+                        },
+                        "city": {
+                            "type": "string",
+                            "description": "City of stay"
+                        },
+                        "stay_duration": {
+                            "description": "Duration of stay",
+                            "type": "integer"
+                        },
+                        "stars": {
+                            "type": "integer",
+                            "description": "Hotel star rating"
+                        },
+                        "budget": {
+                            "type": "integer",
+                            "description": "Budget"
+                        },
+                        "room_type": {
+                            "type": "string",
+                            "description": "Room type"
+                        },
+                        "number_of_rooms": {
+                            "type": "integer",
+                            "description": "Number of rooms"
+                        },
+                        "hotel_name": {
+                            "type": "string",
+                            "description": "Hotel name to search for"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "hotel_info": {
+                            "type": "string",
+                            "description": "Filtered hotel information"
+                        },
+                        "hotel_options": {
+                            "type": "array",
+                            "description": "List of available hotels"
+                        },
+                        "search_status": {
+                            "description": "Search status",
+                            "type": "string"
+                        },
+                        "hotel_id": {
+                            "type": "string",
+                            "description": "Hotel ID that meets the criteria"
+                        },
+                        "availability": {
+                            "type": "boolean",
+                            "description": "Availability of rooms"
+                        },
+                        "price": {
+                            "type": "number",
+                            "description": "Price"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "hotel_booking",
+                "description": "Complete the hotel room booking process",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "hotelName": {
+                            "type": "string",
+                            "description": "Hotel Name"
+                        },
+                        "checkInDate": {
+                            "type": "string",
+                            "description": "Check-in Date"
+                        },
+                        "checkOutDate": {
+                            "type": "string",
+                            "description": "Check-out Date"
+                        },
+                        "room_orientation": {
+                            "type": "string",
+                            "description": "Room Orientation"
+                        },
+                        "roomType": {
+                            "type": "string",
+                            "description": "Room Type"
+                        },
+                        "contactPhone": {
+                            "type": "string",
+                            "description": "Contact Phone"
+                        },
+                        "hotel_id": {
+                            "type": "string",
+                            "description": "Hotel Identifier ID"
+                        },
+                        "number_of_rooms": {
+                            "type": "integer",
+                            "description": "Number of Rooms Booked"
+                        },
+                        "city": {
+                            "type": "string",
+                            "description": "City of Stay"
+                        },
+                        "area": {
+                            "type": "string",
+                            "description": "Area of Stay"
+                        },
+                        "brand": {
+                            "type": "string",
+                            "description": "Hotel Brand"
+                        },
+                        "contact_info": {
+                            "type": "integer",
+                            "description": "Contact Information"
+                        },
+                        "budget": {
+                            "type": "integer",
+                            "description": "Accommodation Budget"
+                        },
+                        "nights": {
+                            "type": "integer",
+                            "description": "Number of Nights"
+                        },
+                        "personal_info": {
+                            "type": "string",
+                            "description": "Personal Information of the User"
+                        },
+                        "payment_info": {
+                            "type": "string",
+                            "description": "Payment Information of the User"
+                        },
+                        "breakfast_included": {
+                            "type": "string",
+                            "description": "Breakfast Included"
+                        },
+                        "special_request": {
+                            "type": "string",
+                            "description": "Special Request"
+                        },
+                        "guestName": {
+                            "type": "string",
+                            "description": "Guest Name"
+                        },
+                        "guestID": {
+                            "type": "string",
+                            "description": "Guest ID Number"
+                        },
+                        "phoneNumber": {
+                            "type": "string",
+                            "description": "Customer Phone Number"
+                        },
+                        "email": {
+                            "type": "string",
+                            "description": "Customer Email"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "reservation_status": {
+                            "type": "string",
+                            "description": "Reservation Status"
+                        },
+                        "reservation_details": {
+                            "type": "string",
+                            "description": "Reservation Details"
+                        },
+                        "confirmation_number": {
+                            "type": "string",
+                            "description": "Booking Confirmation Number"
+                        },
+                        "bookingDetails": {
+                            "type": "object",
+                            "properties": {
+                                "confirmationNumber": {
+                                    "type": "string",
+                                    "description": "Booking Confirmation Number"
+                                },
+                                "totalPrice": {
+                                    "type": "integer",
+                                    "description": "Total Price"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "name": "transportation_booking",
+                "description": "Arrange and book transportation",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "departure_city": {
+                            "type": "string",
+                            "description": "Departure city"
+                        },
+                        "destination_city": {
+                            "type": "string",
+                            "description": "Destination city"
+                        },
+                        "departure_date": {
+                            "type": "string",
+                            "description": "Departure date"
+                        },
+                        "return_date": {
+                            "type": "string",
+                            "description": "Return date"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "booking_confirmation": {
+                            "type": "string",
+                            "description": "Transportation booking confirmation"
+                        },
+                        "booking_details": {
+                            "type": "array",
+                            "description": "Booking details"
+                        },
+                        "booking_status": {
+                            "type": "string",
+                            "description": "Booking status"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "book_ticket",
+                "description": "Complete the ticket booking process",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "attractions": {
+                            "type": "string",
+                            "description": "Attractions to book"
+                        },
+                        "visit_dates": {
+                            "type": "string",
+                            "description": "Visit dates"
+                        },
+                        "date": {
+                            "type": "string",
+                            "description": "Booking date"
+                        },
+                        "activity": {
+                            "type": "string",
+                            "description": "Activity name"
+                        },
+                        "visitor_name": {
+                            "type": "string",
+                            "description": "Visitor's name"
+                        },
+                        "contactInfo": {
+                            "type": "string",
+                            "description": "Customer contact information"
+                        },
+                        "ticketType": {
+                            "type": "string",
+                            "description": "Ticket type"
+                        },
+                        "travel_mode": {
+                            "type": "string",
+                            "description": "Mode of transportation"
+                        },
+                        "departure": {
+                            "type": "string",
+                            "description": "Place of departure"
+                        },
+                        "destination": {
+                            "type": "string",
+                            "description": "Destination"
+                        },
+                        "travel_date": {
+                            "type": "string",
+                            "description": "Travel date"
+                        },
+                        "customerInfo": {
+                            "type": "object",
+                            "description": "Booker's information",
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "description": "Booker's name"
+                                },
+                                "phone": {
+                                    "type": "string",
+                                    "description": "Booker's phone number"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "description": "Booker's email address"
+                                }
+                            },
+                            "required": [
+                                "name",
+                                "phone",
+                                "email"
+                            ]
+                        },
+                        "event": {
+                            "type": "string",
+                            "description": "Event name"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "booking_status": {
+                            "type": "string",
+                            "description": "Ticket booking status"
+                        },
+                        "booking_details": {
+                            "type": "array",
+                            "description": "Booking details"
+                        },
+                        "tickets_confirmation": {
+                            "type": "string",
+                            "description": "Tickets booking confirmation information"
+                        },
+                        "booking_reference": {
+                            "type": "string",
+                            "description": "Booking reference information"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Travel",
+        "id": "test-675"
+    },
+    {
+        "question": "I need to schedule a repair for my TV at 6 PM tomorrow evening. The brand is Sony, model X800H, and there is an issue with the screen. Please book the repair service and tell me the reservation number.\n",
+        "plan": [
+            {
+                "step": "1. Obtain user contact information",
+                "tool": "null"
+            },
+            {
+                "step": "1.1 Obtain user's name (Name: User's name)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.2 Obtain user's contact number (Contact number: User's phone number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "1.3 Obtain the installation address of the user's TV (Installation address: User's address)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2. Find repair service",
+                "tool": "null"
+            },
+            {
+                "step": "2.1 Determine the repair service provider",
+                "tool": "No tool required"
+            },
+            {
+                "step": "2.1.1 Search for authorized Sony TV repair service providers",
+                "tool": "find_authorized_service_provider(brand='Sony')"
+            },
+            {
+                "step": "2.1.2 Select the nearest service provider to the user (Service provider list: Authorized Sony TV repair service provider list, User address: User's address)",
+                "tool": "select_nearest_service_provider(service_providers=<Authorized Sony TV repair service provider list>, user_address='User's address')"
+            },
+            {
+                "step": "2.2 Obtain the contact information of the repair service provider (Service provider contact information: Nearest service provider's contact information to the user)",
+                "tool": "get_service_provider_contact(service_provider=<Nearest service provider to the user>)"
+            },
+            {
+                "step": "3. Book repair service",
+                "tool": "null"
+            },
+            {
+                "step": "3.1 Contact the repair service provider",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.1.1 Provide the brand, model, and issue description of the TV (Brand: Sony, Model: X800H, Issue description: Screen issue)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.1.2 Provide the user's contact information (Name: User's name, Contact number: User's phone number, Installation address: User's address)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.1.3 Obtain the appointment time (Appointment time: Tomorrow's date 18:00:00)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "3.1.4 Book the repair service",
+                "tool": "appliance_repair_request(applianceType='TV', applianceBrand='Sony', applianceModel='X800H', issueDescription='Screen issue', contactInformation='User's name, User's phone number', address='User's address', time='Tomorrow's date 18:00:00')"
+            },
+            {
+                "step": "3.2 Obtain the reservation number (Reservation status: Repair request status, Reservation number: Repair request number)",
+                "tool": "No tool required"
+            },
+            {
+                "step": "4. Notify the user",
+                "tool": "null"
+            },
+            {
+                "step": "4.1 Send the reservation number and the contact information of the repair service provider to the user (Reservation number: Repair request number, Service provider contact information: Repair service provider's contact information)",
+                "tool": "notify_user(appointment_id=<Repair request number>, service_provider_contact=<Repair service provider's contact information>)"
+            }
+        ],
+        "tools": [
+            {
+                "name": "find_authorized_service_provider",
+                "description": "Find authorized repair service providers",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "brand": {
+                            "type": "string",
+                            "description": "Home appliance brand"
+                        },
+                        "region": {
+                            "type": "string",
+                            "description": "Service center location"
+                        },
+                        "model": {
+                            "type": "string",
+                            "description": "Air conditioner model"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "service_center_info": {
+                            "type": "string",
+                            "description": "Information of the found service center"
+                        },
+                        "service_providers": {
+                            "type": "array",
+                            "description": "List of authorized repair service providers"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "select_nearest_service_provider",
+                "description": "Select the nearest service provider to the user",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "service_centers": {
+                            "type": "array",
+                            "description": "List of repair centers"
+                        },
+                        "user_address": {
+                            "type": "string",
+                            "description": "User service address"
+                        },
+                        "service_providers": {
+                            "type": "array",
+                            "description": "List of authorized repair service providers"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "nearest_service_provider": {
+                            "type": "string",
+                            "description": "The nearest service provider to the user"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "get_service_provider_contact",
+                "description": "Get the contact information of the maintenance service provider",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "service_provider": {
+                            "type": "string",
+                            "description": "Maintenance service provider"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "contact": {
+                            "type": "string",
+                            "description": "Contact information of the maintenance service provider"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "appliance_repair_request",
+                "description": "Appliance Repair Request Tool",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "applianceType": {
+                            "description": "Type of appliance to be repaired, such as refrigerator, TV, washing machine, etc.",
+                            "type": "string"
+                        },
+                        "applianceBrand": {
+                            "description": "Brand of the appliance to be repaired",
+                            "type": "string"
+                        },
+                        "applianceModel": {
+                            "description": "Model of the appliance to be repaired",
+                            "type": "string"
+                        },
+                        "issueDescription": {
+                            "description": "Description of the appliance malfunction",
+                            "type": "string"
+                        },
+                        "contactInformation": {
+                            "description": "Contact information",
+                            "type": "string"
+                        },
+                        "address": {
+                            "description": "Service address",
+                            "type": "string"
+                        },
+                        "time": {
+                            "description": "Scheduled service time",
+                            "type": "string"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "request_status": {
+                            "description": "Repair request status",
+                            "type": "string"
+                        },
+                        "requestID": {
+                            "description": "Repair request ID",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "notify_user",
+                "description": "Send notifications through the user's preferred communication method",
+                "arguments": {
+                    "type": "object",
+                    "properties": {
+                        "user_name": {
+                            "type": "string",
+                            "description": "User name"
+                        },
+                        "preferred_method": {
+                            "type": "string",
+                            "description": "Preferred communication method"
+                        },
+                        "message": {
+                            "type": "string",
+                            "description": "Notification message to be sent"
+                        },
+                        "contact_information": {
+                            "type": "string",
+                            "description": "User contact information"
+                        },
+                        "ticket_price": {
+                            "type": "string",
+                            "description": "Ticket price"
+                        },
+                        "ticket_availability": {
+                            "type": "string",
+                            "description": "Ticket availability information"
+                        },
+                        "updated_balance": {
+                            "type": "string",
+                            "description": "Updated user balance information"
+                        },
+                        "account_id": {
+                            "type": "string",
+                            "description": "User account ID"
+                        },
+                        "appointment_id": {
+                            "type": "string",
+                            "description": "Appointment number"
+                        },
+                        "service_provider_contact": {
+                            "type": "string",
+                            "description": "Contact information of the service provider"
+                        },
+                        "cancellation_status": {
+                            "type": "string",
+                            "description": "Repair cancellation status"
+                        }
+                    }
+                },
+                "results": {
+                    "type": "object",
+                    "properties": {
+                        "notification_status": {
+                            "type": "string",
+                            "description": "Notification sending status"
+                        }
+                    }
+                }
+            }
+        ],
+        "domain": "Repair",
+        "id": "test-859"
+    }
+]
